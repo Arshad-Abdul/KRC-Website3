@@ -1,0 +1,211 @@
+/* Content Boxes Section Styles for IIT Hyderabad KRC Website */
+
+/* Main Container */
+.content-boxes-section {
+  background: linear-gradient(135deg, var(--background-light) 0%, var(--white) 100%);
+  padding: var(--spacing-2xl) 0;
+  position: relative;
+}
+
+.content-boxes-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-md);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: var(--spacing-xl);
+}
+
+/* Universal Box Styling */
+.content-box {
+  background: var(--white);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-lg);
+  border: 1px solid rgba(45, 53, 97, 0.1);
+  overflow: hidden;
+  transition: all var(--transition-normal);
+  position: relative;
+}
+
+.content-box:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-2xl);
+}
+
+/* Box Headers */
+.box-header {
+  background: linear-gradient(135deg, var(--primary-navy) 0%, var(--primary-teal) 100%);
+  color: var(--white);
+  padding: var(--spacing-lg);
+  text-align: center;
+}
+
+.box-header h3 {
+  font-size: var(--font-size-xl);
+  font-weight: 700;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-sm);
+}
+
+.box-header h3 i {
+  font-size: var(--font-size-lg);
+}
+
+/* Box Content */
+.box-content {
+  padding: var(--spacing-lg);
+}
+
+/* Service Links Styling */
+.service-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.service-links li {
+  margin-bottom: var(--spacing-sm);
+  transition: all var(--transition-fast);
+}
+
+.service-links li:hover {
+  transform: translateX(5px);
+}
+
+.service-links a {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  color: var(--dark-gray);
+  text-decoration: none;
+  padding: var(--spacing-sm);
+  border-radius: var(--radius-md);
+  transition: all var(--transition-fast);
+  border-left: 3px solid transparent;
+}
+
+.service-links a:hover {
+  background: linear-gradient(135deg, rgba(27, 161, 161, 0.1) 0%, rgba(45, 53, 97, 0.1) 100%);
+  border-left-color: var(--primary-teal);
+  color: var(--primary-navy);
+}
+
+.service-links a i {
+  color: var(--primary-teal);
+  font-size: var(--font-size-sm);
+  width: 16px;
+  text-align: center;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .content-boxes-container {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-lg);
+  }
+}
+
+@media (max-width: 768px) {
+  .content-boxes-section {
+    padding: var(--spacing-xl) 0;
+  }
+  
+  .content-boxes-container {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-md);
+    padding: 0 var(--spacing-sm);
+  }
+  
+  .content-box {
+    margin-bottom: var(--spacing-md);
+  }
+  
+  .box-header {
+    padding: var(--spacing-md);
+  }
+  
+  .box-header h3 {
+    font-size: var(--font-size-lg);
+  }
+  
+  .box-content {
+    padding: var(--spacing-md);
+  }
+}
+
+@media (max-width: 480px) {
+  .content-boxes-container {
+    padding: 0 var(--spacing-xs);
+  }
+  
+  .box-header {
+    padding: var(--spacing-sm);
+  }
+  
+  .box-header h3 {
+    font-size: var(--font-size-base);
+    flex-direction: column;
+    gap: var(--spacing-xs);
+  }
+  
+  .box-content {
+    padding: var(--spacing-sm);
+  }
+  
+  .service-links a {
+    font-size: var(--font-size-sm);
+    padding: var(--spacing-xs);
+  }
+}
+
+/* Color Variations for Different Boxes */
+.library-services-box .box-header {
+  background: linear-gradient(135deg, #2c5aa0 0%, #1e3d6f 100%);
+}
+
+.research-tools-box .box-header {
+  background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+}
+
+.electronic-resources-box .box-header {
+  background: linear-gradient(135deg, #8e44ad 0%, #6c3483 100%);
+}
+
+.quick-links-box .box-header {
+  background: linear-gradient(135deg, #f39c12 0%, #e67e22 100%);
+}
+
+.opening-hours-box .box-header {
+  background: linear-gradient(135deg, #27ae60 0%, #229954 100%);
+}
+
+.picture-gallery-box .box-header {
+  background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+}
+
+.krc-facilities-box .box-header {
+  background: linear-gradient(135deg, #9b59b6 0%, #8e44ad 100%);
+}
+
+.news-announcements-box .box-header {
+  background: linear-gradient(135deg, #e67e22 0%, #d35400 100%);
+}
+
+.events-box .box-header {
+  background: linear-gradient(135deg, #1abc9c 0%, #16a085 100%);
+}
+
+.faculty-publications-box .box-header {
+  background: linear-gradient(135deg, #34495e 0%, #2c3e50 100%);
+}
+
+.theses-box .box-header {
+  background: linear-gradient(135deg, #7f8c8d 0%, #95a5a6 100%);
+}
+
+.research-outputs-box .box-header {
+  background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+}

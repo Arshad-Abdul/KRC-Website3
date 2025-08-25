@@ -1,0 +1,396 @@
+/* Quick Links Section Styles for IIT Hyderabad KRC Website */
+
+.quick-links-section {
+  background: var(--white);
+  padding: var(--spacing-3xl) 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.quick-links-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 25% 25%, rgba(27, 161, 161, 0.05) 0%, transparent 50%),
+              radial-gradient(circle at 75% 75%, rgba(255, 107, 53, 0.05) 0%, transparent 50%);
+  z-index: 1;
+}
+
+.quick-links-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-md);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--spacing-xl);
+  position: relative;
+  z-index: 2;
+}
+
+/* Quick Link Box */
+.quick-link-box {
+  position: relative;
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  transition: all var(--transition-normal);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid rgba(45, 53, 97, 0.1);
+  height: 100%;
+}
+
+.quick-link-box::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--gradient-primary);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform var(--transition-normal);
+}
+
+.quick-link-box:hover::before {
+  transform: scaleX(1);
+}
+
+.quick-link-box:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-xl);
+  border-color: var(--primary-teal);
+}
+
+/* Quick Link */
+.quick-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: var(--spacing-xl);
+  color: var(--primary-navy);
+  text-decoration: none;
+  height: 100%;
+  position: relative;
+  transition: all var(--transition-fast);
+}
+
+.quick-link:hover {
+  color: var(--primary-teal);
+}
+
+/* Icon Styles */
+.quick-link-icon {
+  width: 80px;
+  height: 80px;
+  background: var(--gradient-primary);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: var(--spacing-lg);
+  transition: all var(--transition-normal);
+  position: relative;
+  overflow: hidden;
+}
+
+.quick-link-icon::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--gradient-accent);
+  border-radius: 50%;
+  opacity: 0;
+  transform: scale(0);
+  transition: all var(--transition-normal);
+}
+
+.quick-link:hover .quick-link-icon::before {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.quick-link-icon i {
+  font-size: 2rem;
+  color: var(--white);
+  z-index: 2;
+  position: relative;
+  transition: all var(--transition-fast);
+}
+
+.quick-link:hover .quick-link-icon {
+  transform: scale(1.1) rotate(5deg);
+  box-shadow: var(--shadow-lg);
+}
+
+/* Title Styles */
+.quick-link-title {
+  font-size: var(--font-size-lg);
+  font-weight: 600;
+  line-height: 1.4;
+  color: var(--primary-navy);
+  transition: color var(--transition-fast);
+  position: relative;
+}
+
+.quick-link:hover .quick-link-title {
+  color: var(--primary-teal);
+}
+
+/* Individual Quick Link Animations */
+.quick-link-box:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.quick-link-box:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.quick-link-box:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+.quick-link-box:nth-child(4) {
+  animation-delay: 0.4s;
+}
+
+.quick-link-box:nth-child(5) {
+  animation-delay: 0.5s;
+}
+
+.quick-link-box:nth-child(6) {
+  animation-delay: 0.6s;
+}
+
+.quick-link-box:nth-child(7) {
+  animation-delay: 0.7s;
+}
+
+.quick-link-box:nth-child(8) {
+  animation-delay: 0.8s;
+}
+
+/* Specific Icon Colors for Different Services */
+.quick-link-box:nth-child(1) .quick-link-icon {
+  background: linear-gradient(135deg, #4f46e5, #7c3aed);
+}
+
+.quick-link-box:nth-child(2) .quick-link-icon {
+  background: linear-gradient(135deg, #059669, #10b981);
+}
+
+.quick-link-box:nth-child(3) .quick-link-icon {
+  background: linear-gradient(135deg, #dc2626, #ef4444);
+}
+
+.quick-link-box:nth-child(4) .quick-link-icon {
+  background: linear-gradient(135deg, #7c2d12, #ea580c);
+}
+
+.quick-link-box:nth-child(5) .quick-link-icon {
+  background: linear-gradient(135deg, #1e40af, #3b82f6);
+}
+
+.quick-link-box:nth-child(6) .quick-link-icon {
+  background: linear-gradient(135deg, #be185d, #ec4899);
+}
+
+.quick-link-box:nth-child(7) .quick-link-icon {
+  background: linear-gradient(135deg, #0891b2, #06b6d4);
+}
+
+.quick-link-box:nth-child(8) .quick-link-icon {
+  background: linear-gradient(135deg, #65a30d, #84cc16);
+}
+
+/* Hover Effects for Specific Icons */
+.quick-link:hover .quick-link-icon {
+  animation: iconPulse 0.6s ease-in-out;
+}
+
+@keyframes iconPulse {
+  0%, 100% {
+    transform: scale(1.1) rotate(5deg);
+  }
+  50% {
+    transform: scale(1.2) rotate(-5deg);
+  }
+}
+
+/* Ripple Effect */
+.quick-link::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: rgba(27, 161, 161, 0.1);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: all 0.6s ease-out;
+  pointer-events: none;
+}
+
+.quick-link:active::after {
+  width: 300px;
+  height: 300px;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .quick-links-container {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--spacing-lg);
+  }
+  
+  .quick-link-icon {
+    width: 70px;
+    height: 70px;
+  }
+  
+  .quick-link-icon i {
+    font-size: 1.75rem;
+  }
+  
+  .quick-link-title {
+    font-size: var(--font-size-base);
+  }
+}
+
+@media (max-width: 768px) {
+  .quick-links-section {
+    padding: var(--spacing-2xl) 0;
+  }
+  
+  .quick-links-container {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: var(--spacing-md);
+  }
+  
+  .quick-link {
+    padding: var(--spacing-lg);
+  }
+  
+  .quick-link-icon {
+    width: 60px;
+    height: 60px;
+    margin-bottom: var(--spacing-md);
+  }
+  
+  .quick-link-icon i {
+    font-size: 1.5rem;
+  }
+  
+  .quick-link-title {
+    font-size: var(--font-size-sm);
+  }
+}
+
+@media (max-width: 480px) {
+  .quick-links-container {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-sm);
+  }
+  
+  .quick-link {
+    padding: var(--spacing-md);
+  }
+  
+  .quick-link-icon {
+    width: 50px;
+    height: 50px;
+    margin-bottom: var(--spacing-sm);
+  }
+  
+  .quick-link-icon i {
+    font-size: 1.25rem;
+  }
+  
+  .quick-link-title {
+    font-size: var(--font-size-xs);
+    line-height: 1.3;
+  }
+}
+
+/* Loading Animation */
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.quick-link-box {
+  animation: slideInUp 0.6s ease-out;
+  animation-fill-mode: both;
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .quick-link-box,
+  .quick-link,
+  .quick-link-icon,
+  .quick-link::after {
+    animation: none !important;
+    transition: none !important;
+  }
+  
+  .quick-link:hover .quick-link-icon {
+    transform: none !important;
+  }
+}
+
+/* Focus styles for keyboard navigation */
+.quick-link:focus {
+  outline: 3px solid var(--primary-teal);
+  outline-offset: 2px;
+  border-radius: var(--radius-lg);
+}
+
+.quick-link:focus .quick-link-icon {
+  transform: scale(1.05);
+  box-shadow: var(--shadow-lg);
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .quick-link-box {
+    border: 2px solid var(--primary-navy);
+  }
+  
+  .quick-link-box:hover {
+    border-color: var(--primary-teal);
+    border-width: 3px;
+  }
+}
+
+/* Print styles */
+@media print {
+  .quick-links-section {
+    background: white;
+    box-shadow: none;
+  }
+  
+  .quick-link-box {
+    box-shadow: none;
+    border: 1px solid #ccc;
+    break-inside: avoid;
+  }
+  
+  .quick-link-icon {
+    background: #f0f0f0 !important;
+    color: #333 !important;
+  }
+}

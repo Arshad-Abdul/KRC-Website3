@@ -1,0 +1,627 @@
+/* Search Box Styles for IIT Hyderabad KRC Website */
+
+.search-toggle-section {
+  background: linear-gradient(135deg, var(--light-gray) 0%, var(--white) 100%);
+  padding: var(--spacing-3xl) 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.search-toggle-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="%23e0e7ff" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+  opacity: 0.3;
+  z-index: 1;
+}
+
+.search-toggle-section > * {
+  position: relative;
+  z-index: 2;
+}
+
+/* Search Forms Container */
+.search-forms {
+ 
+  margin: 0 auto var(--spacing-xl);
+  padding: 0 var(--spacing-md);
+  position: relative;
+  min-height: 120px; /* Consistent height to prevent jumping */
+}
+
+.search-form {
+  display: none;
+  background: var(--white);
+  padding: var(--spacing-lg);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-lg);
+  border: 1px solid rgba(45, 53, 97, 0.1);
+  animation: fadeInUp 0.3s ease-out;
+  position: relative;
+  overflow: hidden;
+  min-height: 100px; /* Consistent height for all forms */
+  max-height: 500px; /* Fixed height to prevent variations */
+  box-sizing: border-box;
+}
+
+.search-form::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--gradient-primary);
+}
+
+/* Search form color indicators */
+#kohaForm::before {
+  background: linear-gradient(90deg, #2c5aa0, #1e3d6f);
+}
+
+#summonsForm::before {
+  background: linear-gradient(90deg, #e74c3c, #c0392b);
+}
+
+#dspaceForm::before {
+  background: linear-gradient(90deg, #8e44ad, #6c3483);
+}
+
+.search-form.active {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-md);
+  align-items: center;
+  box-sizing: border-box;
+}
+
+/* Universal form element styling - IDENTICAL dimensions for all forms */
+.search-form select,
+.search-form input[type="text"] {
+  height: 40px;
+  padding: var(--spacing-sm) var(--spacing-md);
+  border: 1px solid rgba(45, 53, 97, 0.2);
+  border-radius: var(--radius-md);
+  font-size: var(--font-size-sm);
+  font-family: inherit;
+  background: var(--white);
+  transition: all var(--transition-fast);
+  box-sizing: border-box;
+  line-height: 1.2;
+}
+
+.search-form select {
+  padding-right: var(--spacing-lg); /* Space for dropdown arrow */
+}
+
+.search-form select:focus,
+.search-form input[type="text"]:focus {
+  outline: none;
+  border-color: var(--primary-navy);
+  box-shadow: 0 0 0 2px rgba(45, 53, 97, 0.1);
+}
+
+.search-form button {
+  height: 40px;
+  padding: var(--spacing-sm) var(--spacing-md);
+  background: var(--primary-navy);
+  color: var(--white);
+  border: none;
+  border-radius: var(--radius-md);
+  font-size: var(--font-size-sm);
+  font-weight: 500;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  white-space: nowrap;
+  box-sizing: border-box;
+  justify-content: center;
+}
+
+.search-form button:hover {
+  background: #1e3d6f;
+  transform: translateY(-1px);
+}
+
+.search-form button i {
+  font-size: var(--font-size-sm);
+}
+
+/* ========================================
+   CONSISTENT FORM LAYOUTS - SIMILAR APPEARANCE
+   ======================================== */
+
+/* All forms use similar layout principles with consistent spacing */
+#kohaForm.active,
+#summonsForm.active,
+#dspaceForm.raiith-search-form.active {
+  display: flex;
+  gap: var(--spacing-sm);
+  align-items: center;
+  padding: var(--spacing-sm);
+  box-sizing: border-box;
+}
+
+/* Koha and RAIITH - Horizontal layouts */
+#kohaForm.active,
+#dspaceForm.raiith-search-form.active {
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* Summon - Horizontal layout to match others */
+#summonsForm.active {
+  justify-content: center;
+  text-align: left;
+}
+
+/* Consistent sizing for filter/scope containers */
+.koha-filters,
+.koha-scope,
+.raiith-filters,
+.raiith-scope {
+  flex: 1 1 auto;
+  min-width: 120px;
+  max-width: 160px;
+}
+
+/* Input fields grow to take all available space */
+.koha-search-input,
+.summon-search-input,
+.raiith-search-input {
+  flex: 1 1 auto;
+  min-width: 200px;
+  max-width: none; /* Remove max-width to allow full expansion */
+}
+
+/* Consistent button sizing across all forms */
+.koha-search-button,
+.summon-search-button,
+.raiith-search-button {
+  flex: 0 0 auto;
+  min-width: 90px;
+  max-width: 120px;
+}
+
+/* All selects have consistent styling */
+.koha-search-select,
+.raiith-search-select {
+  width: 100%;
+}
+
+/* Summon label - styled to fit horizontal layout */
+.summon-search-label {
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  color: var(--primary-navy);
+  margin-right: var(--spacing-sm);
+  margin-bottom: 0;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+
+
+
+
+/* Removed duplicate form styling - using specific layout rules above */
+
+/* Removed duplicate form element styles - using universal styles above */
+
+/* Toggle Buttons */
+.search-toggle-buttons {
+  display: flex;
+  justify-content: center;
+  gap: var(--spacing-sm);
+  flex-wrap: wrap;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-md);
+}
+
+.search-toggle-buttons button {
+  padding: var(--spacing-md) var(--spacing-lg);
+  background: var(--white);
+  color: var(--primary-navy);
+  border: 2px solid var(--primary-navy);
+  border-radius: var(--radius-lg);
+  font-size: var(--font-size-sm);
+  font-weight: 500;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-xs);
+  min-width: 140px;
+  text-align: center;
+}
+
+.search-toggle-buttons button i {
+  font-size: var(--font-size-lg);
+  margin-bottom: var(--spacing-xs);
+}
+
+.search-toggle-buttons button span {
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.search-toggle-buttons button small {
+  font-size: var(--font-size-xs);
+  opacity: 0.7;
+  font-weight: 400;
+}
+
+.search-toggle-buttons button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background: var(--gradient-primary);
+  transition: width var(--transition-normal);
+  z-index: -1;
+}
+
+.search-toggle-buttons button span {
+  position: relative;
+  z-index: 2;
+}
+
+.search-toggle-buttons button:hover::before {
+  width: 100%;
+}
+
+.search-toggle-buttons button:hover {
+  color: var(--white);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.search-toggle-buttons button.active {
+  background: var(--gradient-primary);
+  color: var(--white);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+.search-toggle-buttons button.active::before {
+  width: 100%;
+}
+
+/* ========================================
+   RESPONSIVE DESIGN - ALL SCREEN SIZES
+   ======================================== */
+
+/* Large screens - optimize layout */
+@media (min-width: 1200px) {
+  .search-forms {
+    /* max-width: 1000px; */
+    margin: 0 auto var(--spacing-xl);
+  }
+  
+  .search-form {
+    padding: var(--spacing-xl);
+  }
+  
+  /* More generous sizing on large screens */
+  .koha-filters,
+  .koha-scope,
+  .raiith-filters,
+  .raiith-scope {
+    min-width: 140px;
+    max-width: 180px;
+  }
+  
+  .koha-search-input,
+  .summon-search-input,
+  .raiith-search-input {
+    flex: 1 1 auto;
+    min-width: 220px;
+    max-width: none; /* Allow full expansion on large screens */
+  }
+}
+
+/* Tablet and smaller desktop */
+@media (max-width: 768px) {
+  .search-toggle-section {
+    padding: var(--spacing-xl) 0;
+  }
+  
+  .search-forms {
+    padding: 0 var(--spacing-sm);
+    min-height: 140px;
+  }
+  
+  .search-form {
+    padding: var(--spacing-md);
+    margin: 0;
+    min-height: 120px;
+    max-height: none; /* Remove height restriction for mobile */
+  }
+  
+  /* ALL forms stack vertically - complete column layout */
+  #kohaForm.active,
+  #summonsForm.active,
+  #dspaceForm.raiith-search-form.active {
+    flex-direction: column !important;
+    align-items: stretch;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-md);
+    flex-wrap: nowrap;
+  }
+  
+  /* All containers stack vertically too */
+  .koha-filters,
+  .koha-scope,
+  .raiith-filters,
+  .raiith-scope {
+    width: 100%;
+    min-width: auto;
+    max-width: none;
+    flex: none;
+  }
+  
+  /* All form elements go full width */
+  .search-form select,
+  .search-form input[type="text"],
+  .search-form button {
+    width: 100% !important;
+    min-width: auto;
+    max-width: none;
+    margin: 0;
+    flex: none;
+  }
+  
+  .search-form button {
+    margin-top: var(--spacing-sm);
+  }
+  
+  /* Summon label goes full width */
+  .summon-search-label {
+    width: 100%;
+    text-align: center;
+    margin-right: 0;
+    margin-bottom: var(--spacing-sm);
+  }
+  
+
+  
+  .search-toggle-buttons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-sm);
+    padding: 0 var(--spacing-sm);
+  }
+  
+  .search-toggle-buttons button {
+    min-width: auto;
+    padding: var(--spacing-sm);
+    font-size: var(--font-size-xs);
+  }
+  
+  .search-toggle-buttons button i {
+    font-size: var(--font-size-base);
+  }
+  
+  .search-toggle-buttons button span {
+    font-size: var(--font-size-xs);
+  }
+  
+  .search-toggle-buttons button small {
+    font-size: 10px;
+  }
+}
+
+/* Mobile phones */
+@media (max-width: 480px) {
+  .search-toggle-section {
+    padding: var(--spacing-lg) 0;
+  }
+  
+  .search-forms {
+    padding: 0 var(--spacing-xs);
+    min-height: 180px; /* More height for stacked elements */
+  }
+  
+  .search-form {
+    padding: var(--spacing-sm);
+    min-height: 160px; /* More height needed for mobile column layout */
+    max-height: none; /* No height restriction */
+  }
+  
+  /* Mobile elements - good touch target size */
+  .search-form select,
+  .search-form input[type="text"],
+  .search-form button {
+    height: 44px; /* Better touch target */
+    padding: var(--spacing-sm);
+    font-size: var(--font-size-sm);
+    width: 100% !important;
+    margin-bottom: var(--spacing-xs);
+  }
+  
+  /* Ensure complete column layout on mobile */
+  #kohaForm.active,
+  #summonsForm.active,
+  #dspaceForm.raiith-search-form.active {
+    flex-direction: column !important;
+    align-items: stretch;
+    padding: var(--spacing-sm);
+    gap: var(--spacing-sm);
+    flex-wrap: nowrap;
+  }
+  
+  /* All containers take full width */
+  .koha-filters,
+  .koha-scope,
+  .raiith-filters,
+  .raiith-scope {
+    width: 100%;
+    margin-bottom: var(--spacing-xs);
+    flex: none;
+  }
+  
+  .summon-search-label {
+    font-size: var(--font-size-sm);
+    margin-bottom: var(--spacing-sm);
+    width: 100%;
+    text-align: center;
+  }
+  
+  .search-form button {
+    margin-top: var(--spacing-sm);
+    margin-bottom: 0;
+  }
+  
+  .search-toggle-buttons {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-xs);
+    padding: 0 var(--spacing-xs);
+  }
+  
+  .search-toggle-buttons button {
+    padding: var(--spacing-xs) var(--spacing-sm);
+    min-height: 60px;
+  }
+  
+  .search-toggle-buttons button i {
+    font-size: var(--font-size-sm);
+    margin-bottom: 2px;
+  }
+  
+  .search-toggle-buttons button span {
+    font-size: 11px;
+    line-height: 1.1;
+  }
+  
+  .search-toggle-buttons button small {
+    font-size: 9px;
+  }
+}
+
+/* Advanced Search Button Special Styling */
+#advancedBtn {
+  background: var(--gradient-accent) !important;
+  color: var(--white) !important;
+  border-color: var(--accent-orange) !important;
+}
+
+#advancedBtn::before {
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent) !important;
+}
+
+#advancedBtn:hover {
+  background: linear-gradient(135deg, var(--accent-yellow) 0%, var(--accent-orange) 100%) !important;
+}
+
+/* Loading State */
+.search-form.loading {
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+.search-form.loading button {
+  background: var(--medium-gray) !important;
+}
+
+/* Accessibility Improvements */
+@media (prefers-reduced-motion: reduce) {
+  .search-form,
+  .search-form button,
+  .search-toggle-buttons button {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .search-form {
+    border: 2px solid var(--primary-navy);
+  }
+  
+  .search-form select,
+  .search-form input[type="text"] {
+    border-width: 2px;
+  }
+  
+  .search-toggle-buttons button {
+    border-width: 3px;
+  }
+}
+
+/* Error states */
+.search-form select.error,
+.search-form input[type="text"].error {
+  border-color: #dc3545;
+  background-color: #fff5f5;
+}
+
+.search-form select.error:focus,
+.search-form input[type="text"].error:focus {
+  box-shadow: 0 0 0 3px rgba(220, 53, 69, 0.1);
+}
+
+/* Color-coded search type indicators */
+.search-toggle-buttons button[data-search-type="books"] {
+  border-color: #2c5aa0;
+  color: #2c5aa0;
+}
+
+.search-toggle-buttons button[data-search-type="books"].active,
+.search-toggle-buttons button[data-search-type="books"]:hover {
+  background: #2c5aa0;
+  color: white;
+}
+
+.search-toggle-buttons button[data-search-type="digital"] {
+  border-color: #e74c3c;
+  color: #e74c3c;
+}
+
+.search-toggle-buttons button[data-search-type="digital"].active,
+.search-toggle-buttons button[data-search-type="digital"]:hover {
+  background: #e74c3c;
+  color: white;
+}
+
+.search-toggle-buttons button[data-search-type="repository"] {
+  border-color: #8e44ad;
+  color: #8e44ad;
+}
+
+.search-toggle-buttons button[data-search-type="repository"].active,
+.search-toggle-buttons button[data-search-type="repository"]:hover {
+  background: #8e44ad;
+  color: white;
+}
+
+.search-toggle-buttons button[data-search-type="advanced"] {
+  border-color: #f39c12;
+  color: #f39c12;
+}
+
+.search-toggle-buttons button[data-search-type="advanced"].active,
+.search-toggle-buttons button[data-search-type="advanced"]:hover {
+  background: #f39c12;
+  color: white;
+}
+
+/* ========================================
+   INDIVIDUAL SEARCH FORM SELECTORS
+   ======================================== */
+
+/* All form-specific CSS now handled by universal rules above */
+
+/* Removed duplicate hover style - using universal button hover above */

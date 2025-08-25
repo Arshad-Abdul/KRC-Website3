@@ -1,0 +1,81 @@
+/* Opening Hours Table Styles */
+
+.hours-table-container {
+  overflow-x: auto;
+  border-radius: var(--radius-md);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.hours-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--white);
+  font-size: var(--font-size-sm);
+}
+
+.hours-table thead th {
+  background: linear-gradient(135deg, var(--primary-navy) 0%, var(--primary-teal) 100%);
+  color: var(--white);
+  padding: var(--spacing-md);
+  text-align: left;
+  font-weight: 600;
+  border: none;
+}
+
+.hours-table tbody td {
+  padding: var(--spacing-md);
+  border-bottom: 1px solid #f0f0f0;
+  color: var(--dark-gray);
+  transition: background-color var(--transition-fast);
+}
+
+.hours-table tbody tr:hover {
+  background: rgba(27, 161, 161, 0.05);
+}
+
+.hours-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.hours-table tbody td:first-child {
+  font-weight: 500;
+  color: var(--primary-navy);
+}
+
+.hours-table tbody td:last-child {
+  font-weight: 600;
+  color: var(--primary-teal);
+  text-align: center;
+}
+
+/* Responsive Table */
+@media (max-width: 768px) {
+  .hours-table {
+    font-size: var(--font-size-xs);
+  }
+  
+  .hours-table thead th,
+  .hours-table tbody td {
+    padding: var(--spacing-sm);
+  }
+}
+
+@media (max-width: 480px) {
+  .hours-table-container {
+    margin: 0 -var(--spacing-sm);
+  }
+  
+  .hours-table {
+    font-size: 11px;
+  }
+  
+  .hours-table thead th,
+  .hours-table tbody td {
+    padding: var(--spacing-xs);
+  }
+  
+  .hours-table tbody td:first-child {
+    font-size: 10px;
+    line-height: 1.3;
+  }
+}

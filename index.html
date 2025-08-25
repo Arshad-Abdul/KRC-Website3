@@ -1,0 +1,1115 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>KRC Library - Modern Digital Hub</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Knowledge Resource Centre - Your gateway to digital learning and research resources" />
+  
+  <!-- Modern Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="assets/css/modern-carousel.css" />
+  <link rel="stylesheet" href="assets/css/header.css" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="assets/css/search_box.css"/>
+  <link rel="stylesheet" href="assets/css/stats.css" />
+  <link rel="stylesheet" href="assets/css/new-arrivals.css" />
+  <link rel="stylesheet" href="assets/css/content-boxes.css" />
+  <link rel="stylesheet" href="assets/css/opening-hours-table.css" />
+  <link rel="stylesheet" href="assets/css/picture-gallery.css" />
+  <link rel="stylesheet" href="assets/css/news-marquee.css" />
+  <link rel="stylesheet" href="assets/css/facilities-events.css" />
+  <link rel="stylesheet" href="assets/css/publications-marquee.css" />
+  <link rel="stylesheet" href="assets/css/quick-links.css" />
+  <link rel="stylesheet" href="assets/css/footer2.css" />
+  
+  <!-- Icon Libraries -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" crossorigin="anonymous" />
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+</head>
+<body>
+  <header class="header">
+    <div class="nav_upper">
+        <!-- <div id="google_translate_element"></div> -->
+        <div id="email_id"><i class="fa-solid fa-envelope"></i> office.library@iith.ac.in</div>
+    </div>
+
+    <nav class="menu">
+      <div class="header_logo">
+        <img src="./assets/img/KRC-IITH-BL-Logo (2).png" alt="KRC Library Logo">
+      </div>
+      
+      <!-- Mobile Menu Toggle Button -->
+      <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle mobile menu">
+        <div class="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </button>
+      
+      <div class="header_menu">
+          <ul id="mobileMenu">
+            <li>
+              <span>Home</span>
+            </li>
+             <li>
+              <span>
+                <i class="fa-solid fa-book-open"></i> <a href="https://catalogue.krc.iith.ac.in">Catalogue</a>
+              </span>
+            </li>
+            
+            <li class="dropdown">
+              <span>Discover KRC <i class="fa-solid fa-caret-down"></i></span>
+              <ul class="dropdown-menu">
+                <li><a href="#"><i class="ri-stack-fill"></i>&ThickSpace;Journal Resources</a></li>
+                <li><a href="#"><i class="ri-book-read-fill"></i>&ThickSpace;eBooks</a></li>
+                <li><a href="#"><i class="ri-database-line"></i>&ThickSpace;Databases</a></li>
+                <li><a href="#"><i class="ri-pen-nib-fill"></i></i>&ThickSpace;Writing Support Tool</a></li>
+                <li><a href="#"><i class="ri-newspaper-line"></i>&ThickSpace;Newspaper/Magazine</a></li>
+                <li><a href="#"><i class="ri-tools-line"></i>&ThickSpace;Reference Management Tools</a></li>
+                <li><a href="#"><i class="ri-article-line"></i>&ThickSpace;A-Z Resources</a></li>
+                <li><a href="#"><i class="ri-article-line"></i>&ThickSpace;Library Services</a></li>
+                <li><a href="#"><i class="ri-article-line"></i>&ThickSpace;FAQs</a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <span>Facilities <i class="fa-solid fa-caret-down"></i></span>
+               <ul class="dropdown-menu">
+                <li><a href="#"><i class="ri-stack-fill"></i>&ThickSpace;Book GDR</a></li>
+                <li><a href="#"><i class="ri-book-read-fill"></i>&ThickSpace;Book Virtual Class Room</a></li>
+                <li><a href="#"><i class="ri-database-line"></i>&ThickSpace;Book Seminar Room</a></li>
+                <li><a href="#"><i class="ri-pen-nib-fill"></i></i>&ThickSpace;Video Conference Room</a></li>                
+              </ul>
+            </li>
+
+            <li class="dropdown">
+              <span>About us <i class="fa-solid fa-caret-down"></i></span>
+               <ul class="dropdown-menu">
+                <li><a href="#"><i class="ri-stack-fill"></i>&ThickSpace;KRC Team</a></li>
+                <li><a href="#"><i class="ri-book-read-fill"></i>&ThickSpace;Library Committee</a></li>
+                <li><a href="#"><i class="ri-database-line"></i>&ThickSpace;KRC Alumni</a></li>
+               
+              </ul>
+            </li>
+           
+          </ul>
+      </div>
+    </nav>
+
+    <!-- Mobile Dropdown Menu -->
+    <div class="mobile-dropdown-menu" id="mobileDropdownMenu" style="display: none;">
+      <div class="mobile-menu-container">
+        <ul class="mobile-menu-list">
+          <li class="mobile-menu-item">
+            <a href="#" class="mobile-menu-link">
+              <i class="ri-home-4-line"></i>
+              <span>Home</span>
+            </a>
+          </li>
+          <li class="mobile-menu-item">
+            <a href="https://catalogue.krc.iith.ac.in" class="mobile-menu-link">
+              <i class="fa-solid fa-book-open"></i>
+              <span>Catalogue</span>
+            </a>
+          </li>
+          <li class="mobile-menu-item dropdown">
+            <a href="#" class="mobile-menu-link" data-toggle="discover">
+              <i class="ri-search-line"></i>
+              <span>Discover KRC</span>
+              <i class="fa-solid fa-caret-down"></i>
+            </a>
+            <ul class="mobile-submenu" id="discover">
+              <li><a href="#"><i class="ri-stack-fill"></i>Journal Resources</a></li>
+              <li><a href="#"><i class="ri-book-read-fill"></i>eBooks</a></li>
+              <li><a href="#"><i class="ri-database-line"></i>Databases</a></li>
+              <li><a href="#"><i class="ri-pen-nib-fill"></i>Writing Support Tool</a></li>
+              <li><a href="#"><i class="ri-newspaper-line"></i>Newspaper/Magazine</a></li>
+              <li><a href="#"><i class="ri-tools-line"></i>Reference Management Tools</a></li>
+              <li><a href="#"><i class="ri-article-line"></i>A-Z Resources</a></li>
+              <li><a href="#"><i class="ri-article-line"></i>Library Services</a></li>
+              <li><a href="#"><i class="ri-article-line"></i>FAQs</a></li>
+            </ul>
+          </li>
+          <li class="mobile-menu-item dropdown">
+            <a href="#" class="mobile-menu-link" data-toggle="facilities">
+              <i class="ri-building-line"></i>
+              <span>Facilities</span>
+              <i class="fa-solid fa-caret-down"></i>
+            </a>
+            <ul class="mobile-submenu" id="facilities">
+              <li><a href="#"><i class="ri-stack-fill"></i>Book GDR</a></li>
+              <li><a href="#"><i class="ri-book-read-fill"></i>Book Virtual Class Room</a></li>
+              <li><a href="#"><i class="ri-database-line"></i>Book Seminar Room</a></li>
+              <li><a href="#"><i class="ri-pen-nib-fill"></i>Video Conference Room</a></li>
+            </ul>
+          </li>
+          <li class="mobile-menu-item dropdown">
+            <a href="#" class="mobile-menu-link" data-toggle="about">
+              <i class="ri-information-line"></i>
+              <span>About us</span>
+              <i class="fa-solid fa-caret-down"></i>
+            </a>
+            <ul class="mobile-submenu" id="about">
+              <li><a href="#"><i class="ri-stack-fill"></i>KRC Team</a></li>
+              <li><a href="#"><i class="ri-book-read-fill"></i>Library Committee</a></li>
+              <li><a href="#"><i class="ri-database-line"></i>KRC Alumni</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero with modern carousel -->
+  <section class="hero">
+    <div class="modern-carousel"
+         data-autoplay="5000"
+         data-loop="true"
+         data-pause-on-hover="true"
+         data-start-index="0"
+         aria-label="Featured carousel">
+      <button class="mc-btn mc-prev" type="button" aria-label="Previous slide" title="Previous">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M15 19L8 12L15 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+
+      <ul class="mc-track" role="list" aria-live="off">
+        <li class="mc-item" role="group" aria-label="Slide 1">
+          <article class="mc-card">
+            <div class="mc-media">
+              <img src="https://images.unsplash.com/photo-1481627834876-b7833e8f5570?q=80&w=1600&auto=format&fit=crop" alt="Modern university library interior" loading="eager">
+            </div>
+            <div class="mc-card-body">
+              <h2>Welcome to KRC</h2>
+              <p>Your gateway to knowledge and research excellence at IIT Hyderabad.</p>
+              <a class="mc-cta" href="#search">Explore Resources</a>
+            </div>
+          </article>
+        </li>
+
+        <li class="mc-item" role="group" aria-label="Slide 2">
+          <article class="mc-card">
+            <div class="mc-media">
+              <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1600&auto=format&fit=crop" alt="Students studying in library" loading="lazy">
+            </div>
+            <div class="mc-card-body">
+              <h2>Research Excellence</h2>
+              <p>Access world-class databases and digital resources for your research.</p>
+              <a class="mc-cta" href="#databases">View Databases</a>
+            </div>
+          </article>
+        </li>
+
+        <li class="mc-item" role="group" aria-label="Slide 3">
+          <article class="mc-card">
+            <div class="mc-media">
+              <img src="https://images.unsplash.com/photo-1529390079861-591de354faf5?q=80&w=1600&auto=format&fit=crop" alt="Digital library workspace" loading="lazy">
+            </div>
+            <div class="mc-card-body">
+              <h2>Digital Collections</h2>
+              <p>Explore our extensive collection of eBooks and digital journals.</p>
+              <a class="mc-cta" href="#ebooks">Browse eBooks</a>
+            </div>
+          </article>
+        </li>
+
+        <li class="mc-item" role="group" aria-label="Slide 4">
+          <article class="mc-card">
+            <div class="mc-media">
+              <img src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?q=80&w=1600&auto=format&fit=crop" alt="Academic books and resources" loading="lazy">
+            </div>
+            <div class="mc-card-body">
+              <h2>Academic Support</h2>
+              <p>Get help with research, writing, and academic resources.</p>
+              <a class="mc-cta" href="#support">Get Support</a>
+            </div>
+          </article>
+        </li>
+      </ul>
+
+      <button class="mc-btn mc-next" type="button" aria-label="Next slide" title="Next">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M9 5L16 12L9 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+
+      <div class="mc-dots" aria-label="Choose slide"></div>
+    </div>
+  </section>
+ 
+
+  <!-- Toggleable Search Box Section -->
+
+  <section id="search" class="search-toggle-section">
+    <div class="search-forms">
+      <!-- Koha -->
+      <form id="kohaForm" class="search-form active koha-search-form" action="https://catalogue.krc.iith.ac.in/cgi-bin/koha/opac-search.pl" method="get" target="_blank">
+        <div class="koha-filters">
+          <select name="idx" class="koha-search-select">
+            <option value="" disabled selected>Search By</option>
+              <option value="ti">Title</option>
+              <option value="au">Author</option>
+              <option value="su">Subject</option>
+              <option value="nb">ISBN</option>            
+              <option value="callnum">Call Number</option>
+            <option value="bc">Accession Number</option>
+          </select>
+      </div>
+        <input type="text" name="q" placeholder="Search Your Books Here..." required class="koha-search-input" />
+        <div class="koha-scope">
+          <select name="limit" class="koha-search-select">
+            <option value="" disabled selected>Item Type</option>
+              <option value="mc-itype:BK">Books</option>
+              <option value="mc-itype:TB">Textbooks</option>
+              <option value="mc-itype:EB">eBooks</option>
+              <option value="mc-itype:MIT">MIT</option>
+              <option value="mc-itype:CR">Course Reserves</option>
+              <option value="mc-itype:RAJBHASHA">Regional Language Books</option>
+              <option value="mc-itype:TELGU">Telugu Books</option>             
+          </select>
+      </div>
+        <button type="submit" class="koha-search-button"><i class="fa fa-search"></i> Search</button>
+      </form>
+      <!-- Summon Form -->
+      <form id="summonsForm" class="search-form summon-search-form" action="https://iith.summon.serialssolutions.com/" method="get" target="_blank">
+        <label for="summonsSearch" class="summon-search-label">Search Summons</label>
+        <input type="text" name="s.q" placeholder="Enter Your Searching Term Here..." required class="summon-search-input">
+        <button type="submit" class="summon-search-button"><i class="fa fa-search"></i> Search</button>
+      </form>
+      <!-- RAIITH -->
+      <form id="dspaceForm" class="search-form raiith-search-form" action="https://raiith.krc.iith.ac.in/simple-search" method="get" target="_blank">
+        <div class="raiith-filters">
+          <select name="filtername" class="raiith-search-select">
+            <option value="">All Content Types</option>
+            <option value="Article">Article</option>
+            <option value="Thesis">Thesis</option>
+            <option value="Conference paper">Conference Paper</option>
+            <option value="Book chapter">Book Chapter</option>
+            <option value="Book">Book</option>
+            <option value="Review">Review</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+        <input type="text" name="query" placeholder="Search Repository@RAIITH" required class="raiith-search-input" />
+        <div class="raiith-scope">
+          <select name="scope" class="raiith-search-select">
+            <option value="">All of IITH</option>
+            <option value="/handle/4884733-ba1d-4ec0-b3bd-b54eb61ed6c6">IITH Departments</option>
+            <option value="/handle/cb37bfe3-2a46-42b7-9b1d-48103d09d96c">Publications</option>
+            <option value="/handle/aa2c0d64-54d9-4314-89c6-37705435112c">Faculty</option>
+          </select>
+        </div>
+        <button type="submit" class="raiith-search-button"><i class="fa fa-search"></i> Search</button>
+      </form>
+    </div>
+
+    <div class="search-toggle-buttons">
+      <button id="kohaBtn" class="active" data-search-type="books">
+        <i class="fas fa-book"></i>
+        <span>Search Books</span>
+        <small>Library Catalog</small>
+      </button>
+      <button id="summonsBtn" data-search-type="digital">
+        <i class="fas fa-laptop"></i>
+        <span>Search eBooks/Articles</span>
+        <small>Digital Resources</small>
+      </button>
+      <button id="dspaceBtn" data-search-type="repository">
+        <i class="fas fa-archive"></i>
+        <span>Search RAIITH</span>
+        <small>Repository</small>
+      </button>
+      <button id="advancedBtn" data-search-type="advanced">
+        <i class="fas fa-cogs"></i>
+        <span>Advanced Search</span>
+        <small>Expert Mode</small>
+      </button>
+    </div>
+  </section>
+  <!-- Glance -->
+
+  <!-- Quick Links Section -->
+
+
+  <section class="quick-links-section">
+    <div class="quick-links-container">
+      <div class="quick-link-box">
+        <a href="#" class="quick-link">
+          <span class="quick-link-icon"><i class="fas fa-user-graduate"></i></span>
+          <span class="quick-link-title">Membership Form (Students)</span>
+        </a>
+      </div>
+      <div class="quick-link-box">
+        <a href="#" class="quick-link">
+          <span class="quick-link-icon"><i class="fas fa-user-tie"></i></span>
+          <span class="quick-link-title">Membership Form (Faculty/Staff)</span>
+        </a>
+      </div>
+      <div class="quick-link-box">
+        <a href="#" class="quick-link">
+          <span class="quick-link-icon"><i class="fas fa-file-alt"></i></span>
+          <span class="quick-link-title">Article Request Form</span>
+        </a>
+      </div>
+      <div class="quick-link-box">
+        <a href="#" class="quick-link">
+          <span class="quick-link-icon"><i class="fas fa-calendar-check"></i></span>
+          <span class="quick-link-title">GDR Booking</span>
+        </a>
+      </div>
+      <div class="quick-link-box">
+        <a href="#" class="quick-link">
+          <span class="quick-link-icon"><i class="fas fa-spell-check"></i></span>
+          <span class="quick-link-title">Grammarly Activation Form</span>
+        </a>
+      </div>
+      <div class="quick-link-box">
+        <a href="#" class="quick-link">
+          <span class="quick-link-icon"><i class="fas fa-book-reader"></i></span>
+          <span class="quick-link-title">Book Suggestion Form</span>
+        </a>
+      </div>
+      <div class="quick-link-box">
+        <a href="#" class="quick-link">
+          <span class="quick-link-icon"><i class="fas fa-th-list"></i></span>
+          <span class="quick-link-title">A-Z Resources</span>
+        </a>
+      </div>
+      <div class="quick-link-box">
+        <a href="#" class="quick-link">
+          <span class="quick-link-icon"><i class="fas fa-book"></i></span>
+          <span class="quick-link-title">Subject Guides</span>
+        </a>
+      </div>
+    </div>
+  </section>
+  <!-- Stats Section -->
+
+<section class="stats-section">
+  <div class="stats-container">
+    <div class="stat-box">
+      <span class="stat-label">eBooks</span>
+      <span class="stat-number" data-target="345780">0</span>
+    </div>
+    <div class="stat-box">
+      <span class="stat-label">Books</span>
+      <span class="stat-number" data-target="38737">0</span>
+    </div>
+    <div class="stat-box">
+      <span class="stat-label">Theses</span>
+      <span class="stat-number" data-target="720">0</span>
+    </div>
+    <div class="stat-box">
+      <span class="stat-label">Databases</span>
+      <span class="stat-number" data-target="80">0</span>
+    </div>
+    <div class="stat-box">
+      <span class="stat-label">Newspapers</span>
+      <span class="stat-number" data-target="20">0</span>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- New Arrivals Section -->
+<section class="new-arrivals" aria-labelledby="na-title">
+  <div class="na-heading">
+    <span class="sr-only" id="na-title">New Arrivals</span>
+    <h3>New Arrivals</h3>
+  </div>
+  <!-- Content will be added later -->
+</section>
+
+<!-- Content Boxes Section -->
+<section class="content-boxes-section">
+  <div class="content-boxes-container">
+    
+    <!-- Box 1: Library Services -->
+    <div class="content-box library-services-box">
+      <div class="box-header">
+        <h3><i class="fas fa-book-open"></i>Library Services</h3>
+      </div>
+      <div class="box-content">
+        <ul class="service-links">
+          <li><a href="https://library.iith.ac.in/timings/" target="_blank"><i class="fas fa-clock"></i>Library Hours & Circulation</a></li>
+          <li><a href="https://library.iith.ac.in/membership/" target="_blank"><i class="fas fa-id-card"></i>Library Membership</a></li>
+          <li><a href="https://catalogue.krc.iith.ac.in/cgi-bin/koha/opac-shelves.pl?op=view&shelfnumber=493&sortfield=title" target="_blank"><i class="fas fa-star"></i>New Arrivals</a></li>
+          <li><a href="https://catalogue.krc.iith.ac.in/" target="_blank"><i class="fas fa-search"></i>Book Catalogue (OPAC)</a></li>
+          <li><a href="https://library.iith.ac.in/document-delivery/" target="_blank"><i class="fas fa-truck"></i>Document Delivery Services</a></li>
+          <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSf49DhRqeM-hFobMhVf11f5czPHGlIZEjVHk18M0cn_n205pQ/viewform" target="_blank"><i class="fas fa-file-alt"></i>Article Request Form</a></li>
+          <li><a href="https://library.iith.ac.in/suggestion-procurement/" target="_blank"><i class="fas fa-lightbulb"></i>Book Suggestion/Procurement</a></li>
+          <li><a href="#" target="_blank"><i class="fas fa-question-circle"></i>Frequently Asked Questions</a></li>
+          <li><a href="https://iith.irins.org/" target="_blank"><i class="fas fa-user-graduate"></i>IRINS Faculty Profile</a></li>
+          <li><a href="https://catalogue.krc.iith.ac.in/cgi-bin/koha/opac-search.pl?advsearch=1&limit=mc-itype%2Cphr%3AFB&sort_by=relevance&do=Search" target="_blank"><i class="fas fa-graduation-cap"></i>IITH Faculty Publications - Books</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Box 2: Research Support Tools -->
+    <div class="content-box research-tools-box">
+      <div class="box-header">
+        <h3><i class="fas fa-microscope"></i>Research Support Tools</h3>
+      </div>
+      <div class="box-content">
+        <ul class="service-links">
+          <li><a href="https://www.turnitin.com/" target="_blank"><i class="fas fa-check-double"></i>Similarity Check/Plagiarism</a></li>
+          <li><a href="https://www.grammarly.com/" target="_blank"><i class="fas fa-spell-check"></i>Grammarly</a></li>
+          <li><a href="https://library.iith.ac.in/reference-managers/" target="_blank"><i class="fas fa-bookmark"></i>Reference Managers</a></li>
+          <li><a href="https://identity.iith.ac.in/" target="_blank"><i class="fas fa-tools"></i>Scientific Tools</a></li>
+          <li><a href="https://library.iith.ac.in/citation/" target="_blank"><i class="fas fa-quote-right"></i>Citation Styles</a></li>
+          <li><a href="#" target="_blank"><i class="fas fa-database"></i>Scopus</a></li>
+          <li><a href="#" target="_blank"><i class="fas fa-globe"></i>Web of Science</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Box 3: Electronic Resources -->
+    <div class="content-box electronic-resources-box">
+      <div class="box-header">
+        <h3><i class="fas fa-laptop"></i>Electronic Resources</h3>
+      </div>
+      <div class="box-content">
+        <ul class="service-links">
+          <li><a href="https://catalogue.krc.iith.ac.in/pages.pl?p=er" target="_blank"><i class="fas fa-wifi"></i>Subscribed E-Resources (On-Campus)</a></li>
+          <li><a href="https://identity.iith.ac.in/" target="_blank"><i class="fas fa-home"></i>Off-Campus Access to E-Resources</a></li>
+          <li><a href="#" target="_blank"><i class="fas fa-unlock"></i>Open Access E-Resources</a></li>
+          <li><a href="https://library.iith.ac.in/usage-policy/" target="_blank"><i class="fas fa-gavel"></i>Usage Policy</a></li>
+          <li><a href="https://raiith.krc.iith.ac.in/home" target="_blank"><i class="fas fa-archive"></i>RAIITH (Institutional Repository)</a></li>
+          <li><a href="https://catalogue.krc.iith.ac.in/cgi-bin/koha/opac-search.pl?idx=&q=Entrepreneurial+Management&weight_search=1" target="_blank"><i class="fas fa-rocket"></i>Pragyaan</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Box 4: Quick Links -->
+    <div class="content-box quick-links-box">
+      <div class="box-header">
+        <h3><i class="fas fa-external-link-alt"></i>Quick Links</h3>
+      </div>
+      <div class="box-content">
+        <ul class="service-links">
+          <li><a href="#" target="_blank"><i class="fas fa-list"></i>A-Z Resources</a></li>
+          <li><a href="#" target="_blank"><i class="fas fa-graduation-cap"></i>OER</a></li>
+          <li><a href="#" target="_blank"><i class="fas fa-university"></i>NDLI</a></li>
+          <li><a href="#" target="_blank"><i class="fas fa-search"></i>OPAC</a></li>
+          <li><a href="#" target="_blank"><i class="fas fa-shopping-cart"></i>Indent a Book</a></li>
+          <li><a href="#" target="_blank"><i class="fas fa-scroll"></i>Thesis Specimen</a></li>
+          <li><a href="#" target="_blank"><i class="fas fa-video"></i>NPTEL</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Box 5: KRC Opening Hours -->
+    <div class="content-box opening-hours-box">
+      <div class="box-header">
+        <h3><i class="fas fa-clock"></i>KRC Opening Hours</h3>
+      </div>
+      <div class="box-content">
+        <div class="hours-table-container">
+          <table class="hours-table">
+            <thead>
+              <tr>
+                <th>Name of the Service</th>
+                <th>Section Timings</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Reading Hall (GF, FF & SF) and Property Counter</td>
+                <td>9:00 AM - 01:50 AM</td>
+              </tr>
+              <tr>
+                <td>Reference Section (SF)</td>
+                <td>9:00 AM - 01:50 AM</td>
+              </tr>
+              <tr>
+                <td>Circulation Section (Issue and Return of books)</td>
+                <td>9:00 AM - 20:30 PM</td>
+              </tr>
+              <tr>
+                <td>Photocopy / Printing Service (GF)</td>
+                <td>9:00 AM - 20:30 PM</td>
+              </tr>
+              <tr>
+                <td>Group Discussion Rooms (TF) access</td>
+                <td>9:00 AM - 01:00 AM</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- Box 6: Picture Gallery -->
+    <div class="content-box picture-gallery-box">
+      <div class="box-header">
+        <h3><i class="fas fa-images"></i>Picture Gallery</h3>
+      </div>
+      <div class="box-content">
+        <div class="gallery-slider">
+          <div class="gallery-track">
+            <div class="gallery-slide">
+              <img src="https://via.placeholder.com/800x450/2c5aa0/ffffff?text=Library+Main+Hall" alt="Library Main Hall">
+            </div>
+            <div class="gallery-slide">
+              <img src="https://via.placeholder.com/800x450/e74c3c/ffffff?text=Reading+Room" alt="Reading Room">
+            </div>
+            <div class="gallery-slide">
+              <img src="https://via.placeholder.com/800x450/8e44ad/ffffff?text=Digital+Section" alt="Digital Section">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Box 7: KRC Facilities -->
+    <div class="content-box krc-facilities-box">
+      <div class="box-header">
+        <h3><i class="fas fa-building"></i>KRC Facilities</h3>
+      </div>
+      <div class="box-content">
+        <div class="facilities-list">
+          <div class="facility-item">
+            <h4><i class="fas fa-users"></i>Group Discussion Rooms (11 Rooms)</h4>
+            <p>4 to 14 Seating Capacity</p>
+          </div>
+          <div class="facility-item">
+            <h4><i class="fas fa-chalkboard-teacher"></i>Virtual Class Room (GF)</h4>
+            <p>81 Seating Capacity</p>
+          </div>
+          <div class="facility-item">
+            <h4><i class="fas fa-presentation"></i>Seminar Room (GF)</h4>
+            <p>56 Seating Capacity</p>
+          </div>
+          <div class="facility-item">
+            <h4><i class="fas fa-video"></i>Video Conference Room / Faculty Discussion Room (FF)</h4>
+            <p>35 Seating Capacity</p>
+          </div>
+        </div>
+        <div class="booking-info">
+          <p><i class="fas fa-info-circle"></i>You may book these facilities either offline at Circulation Counter (FF) in KRC or through online using this form</p>
+          <p><i class="fas fa-envelope"></i>For any assistance, please reach out to <a href="mailto:krc.facilities@iith.ac.in">krc.facilities@iith.ac.in</a></p>
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSdPSYPHUYrAh6GqMykot15NqPxlFRK51PdL3j73n1sxfldgEQ/viewform" target="_blank" class="booking-btn">
+            <i class="fas fa-calendar-plus"></i>Book Facility Online
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Box 8: News/Announcements -->
+    <div class="content-box news-announcements-box">
+      <div class="box-header">
+        <h3><i class="fas fa-newspaper"></i>News / Announcements</h3>
+      </div>
+      <div class="box-content">
+        <div class="news-marquee">
+          <div class="news-item">
+            <p>New digital resources added to the library collection for engineering students.</p>
+            <a href="#" class="news-link">Click to know more</a>
+          </div>
+          <div class="news-item">
+            <p>Extended library hours during examination period - now open until 2:00 AM.</p>
+            <a href="#" class="news-link">Click to know more</a>
+          </div>
+          <div class="news-item">
+            <p>Workshop on research methodology and citation management scheduled for next week.</p>
+            <a href="#" class="news-link">Click to know more</a>
+          </div>
+          <div class="news-item">
+            <p>New IEEE and ACM digital library subscriptions now available for all students.</p>
+            <a href="#" class="news-link">Click to know more</a>
+          </div>
+          <div class="news-item">
+            <p>Library orientation program for new faculty members - registration open.</p>
+            <a href="#" class="news-link">Click to know more</a>
+          </div>
+          <div class="news-item">
+            <p>Updated plagiarism detection software now available for thesis submissions.</p>
+            <a href="#" class="news-link">Click to know more</a>
+          </div>
+          <div class="news-item">
+            <p>Special collection of rare manuscripts now digitized and available online.</p>
+            <a href="#" class="news-link">Click to know more</a>
+          </div>
+          <div class="news-item">
+            <p>Inter-library loan services expanded to include international institutions.</p>
+            <a href="#" class="news-link">Click to know more</a>
+          </div>
+          <div class="news-item">
+            <p>New mobile app launched for easy access to library services and resources.</p>
+            <a href="#" class="news-link">Click to know more</a>
+          </div>
+          <div class="news-item">
+            <p>Renewable energy research database subscription added to electronic resources.</p>
+            <a href="#" class="news-link">Click to know more</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Box 9: Events -->
+    <div class="content-box events-box">
+      <div class="box-header">
+        <h3><i class="fas fa-calendar-alt"></i>Events</h3>
+      </div>
+      <div class="box-content">
+        <div class="event-card">
+          <div class="event-image">
+            <img src="https://via.placeholder.com/300x200/f39c12/ffffff?text=Research+Workshop" alt="Research Workshop">
+          </div>
+          <div class="event-details">
+            <h4>Research Methodology Workshop</h4>
+            <p class="event-info"><i class="fas fa-calendar"></i>March 15, 2025</p>
+            <p class="event-info"><i class="fas fa-clock"></i>10:00 AM - 4:00 PM</p>
+            <p class="event-info"><i class="fas fa-map-marker-alt"></i>KRC Seminar Hall</p>
+            <p class="event-description">Join us for an intensive workshop on research methodology, data analysis, and academic writing techniques.</p>
+            <button class="join-event-btn"><i class="fas fa-plus"></i>Join Event</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Box 10: Faculty Publications -->
+    <div class="content-box faculty-publications-box">
+      <div class="box-header">
+        <h3><i class="fas fa-book"></i>Faculty Publications</h3>
+      </div>
+      <div class="box-content">
+        <div class="publications-marquee">
+          <div class="publication-item">
+            <img src="https://via.placeholder.com/120x180/2c5aa0/ffffff?text=Book+1" alt="Book Cover">
+            <div class="publication-details">
+              <h4>Advanced Machine Learning Algorithms</h4>
+              <p class="author">Dr. Rajesh Kumar</p>
+              <p class="accession">Acc: ML2024001</p>
+              <p class="call-no">Call No: 006.31 KUM</p>
+            </div>
+          </div>
+          <div class="publication-item">
+            <img src="https://via.placeholder.com/120x180/e74c3c/ffffff?text=Book+2" alt="Book Cover">
+            <div class="publication-details">
+              <h4>Sustainable Engineering Practices</h4>
+              <p class="author">Dr. Priya Sharma</p>
+              <p class="accession">Acc: SE2024002</p>
+              <p class="call-no">Call No: 628 SHA</p>
+            </div>
+          </div>
+          <div class="publication-item">
+            <img src="https://via.placeholder.com/120x180/8e44ad/ffffff?text=Book+3" alt="Book Cover">
+            <div class="publication-details">
+              <h4>Quantum Computing Fundamentals</h4>
+              <p class="author">Dr. Arjun Menon</p>
+              <p class="accession">Acc: QC2024003</p>
+              <p class="call-no">Call No: 004.1 MEN</p>
+            </div>
+          </div>
+          <div class="publication-item">
+            <img src="https://via.placeholder.com/120x180/f39c12/ffffff?text=Book+4" alt="Book Cover">
+            <div class="publication-details">
+              <h4>Biomedical Signal Processing</h4>
+              <p class="author">Dr. Kavitha Reddy</p>
+              <p class="accession">Acc: BSP2024004</p>
+              <p class="call-no">Call No: 610.28 RED</p>
+            </div>
+          </div>
+          <div class="publication-item">
+            <img src="https://via.placeholder.com/120x180/27ae60/ffffff?text=Book+5" alt="Book Cover">
+            <div class="publication-details">
+              <h4>Advanced Materials Science</h4>
+              <p class="author">Dr. Suresh Kumar</p>
+              <p class="accession">Acc: AMS2024005</p>
+              <p class="call-no">Call No: 620.11 KUM</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Box 11: Theses -->
+    <div class="content-box theses-box">
+      <div class="box-header">
+        <h3><i class="fas fa-scroll"></i>Theses</h3>
+      </div>
+      <div class="box-content">
+        <div class="theses-marquee">
+          <div class="thesis-item">
+            <div class="thesis-details">
+              <h4>Deep Learning Applications in Computer Vision</h4>
+              <p class="author">Amit Patel</p>
+              <p class="accession">Acc: TH2024001</p>
+              <p class="call-no">Call No: T 006.37 PAT</p>
+            </div>
+          </div>
+          <div class="thesis-item">
+            <div class="thesis-details">
+              <h4>Renewable Energy Systems Optimization</h4>
+              <p class="author">Sneha Reddy</p>
+              <p class="accession">Acc: TH2024002</p>
+              <p class="call-no">Call No: T 621.042 RED</p>
+            </div>
+          </div>
+          <div class="thesis-item">
+            <div class="thesis-details">
+              <h4>Advanced Neural Networks for Pattern Recognition</h4>
+              <p class="author">Vikram Singh</p>
+              <p class="accession">Acc: TH2024003</p>
+              <p class="call-no">Call No: T 006.32 SIN</p>
+            </div>
+          </div>
+          <div class="thesis-item">
+            <div class="thesis-details">
+              <h4>Sustainable Water Treatment Technologies</h4>
+              <p class="author">Ananya Sharma</p>
+              <p class="accession">Acc: TH2024004</p>
+              <p class="call-no">Call No: T 628.16 SHA</p>
+            </div>
+          </div>
+          <div class="thesis-item">
+            <div class="thesis-details">
+              <h4>Robotics and Automation in Manufacturing</h4>
+              <p class="author">Rohit Agarwal</p>
+              <p class="accession">Acc: TH2024005</p>
+              <p class="call-no">Call No: T 670.427 AGA</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Box 12: Research Outputs -->
+    <div class="content-box research-outputs-box">
+      <div class="box-header">
+        <h3><i class="fas fa-flask"></i>Research Outputs</h3>
+      </div>
+      <div class="box-content">
+        <div class="research-marquee">
+          <div class="research-item">
+            <div class="research-details">
+              <h4>Quantum Computing Applications in Cryptography</h4>
+              <p class="author">Dr. Venkata Subramanian, Dr. Lisa Wong</p>
+              <p class="journal">Nature Quantum Information, 2024</p>
+              <p class="doi">DOI: 10.1038/s41534-024-00123-4</p>
+            </div>
+          </div>
+          <div class="research-item">
+            <div class="research-details">
+              <h4>Biomedical Engineering Innovations in Drug Delivery</h4>
+              <p class="author">Dr. Kavitha Nair, Dr. James Smith</p>
+              <p class="journal">IEEE Transactions on Biomedical Engineering, 2024</p>
+              <p class="doi">DOI: 10.1109/TBME.2024.98765</p>
+            </div>
+          </div>
+          <div class="research-item">
+            <div class="research-details">
+              <h4>Machine Learning Approaches for Climate Modeling</h4>
+              <p class="author">Dr. Rajesh Kumar, Dr. Priya Sharma</p>
+              <p class="journal">Science, 2024</p>
+              <p class="doi">DOI: 10.1126/science.2024.456</p>
+            </div>
+          </div>
+          <div class="research-item">
+            <div class="research-details">
+              <h4>Advanced Materials for Energy Storage Applications</h4>
+              <p class="author">Dr. Suresh Kumar, Dr. Ananya Reddy</p>
+              <p class="journal">Nature Materials, 2024</p>
+              <p class="doi">DOI: 10.1038/nmat.2024.789</p>
+            </div>
+          </div>
+          <div class="research-item">
+            <div class="research-details">
+              <h4>Sustainable Transportation Systems using IoT</h4>
+              <p class="author">Dr. Vikram Singh, Dr. Rohit Agarwal</p>
+              <p class="journal">Nature Communications, 2024</p>
+              <p class="doi">DOI: 10.1038/s41467-024-12345-6</p>
+            </div>
+          </div>
+          <div class="research-item">
+            <div class="research-details">
+              <h4>Novel Approaches in Structural Engineering Design</h4>
+              <p class="author">Dr. Arjun Menon, Dr. Kavitha Reddy</p>
+              <p class="journal">Journal of Structural Engineering, 2024</p>
+              <p class="doi">DOI: 10.1061/(ASCE)ST.2024.67890</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+  <!-- Footer Section -->
+  <footer class="footer">
+    <div class="footer-container">
+      <!-- Quick Links Section -->
+      <div class="footer-section">
+        <h3 class="footer-title">Quick Links</h3>
+        <ul class="footer-links">
+          <li><a href="https://identity.iith.ac.in/" target="_blank" rel="noopener noreferrer">
+            <i class="fas fa-external-link-alt"></i> E-Resource Remote Access
+          </a></li>
+          <li><span class="footer-info">
+            <i class="far fa-clock"></i> Available: 9:00 AM to 01:50 AM
+          </span></li>
+          <li><span class="footer-info">
+            <i class="fas fa-envelope"></i> For KRC Facilities enquiry:
+          </span></li>
+          <li><a href="mailto:krc.facilities@iith.ac.in">
+            <i class="fas fa-envelope"></i> krc.facilities@iith.ac.in
+          </a></li>
+        </ul>
+      </div>
+
+      <!-- Contact Us Section -->
+      <div class="footer-section">
+        <h3 class="footer-title">Contact Us</h3>
+        <div class="contact-info">
+          <h4>IITH Knowledge Resource Centre (KRC)</h4>
+          <p>Indian Institute of Technology Hyderabad</p>
+          <p>Telangana - 502284 | India</p>
+          <p><i class="fas fa-phone"></i> 040-23016750</p>
+          <p><a href="mailto:office.library@iith.ac.in">
+            <i class="fas fa-envelope"></i> office.library@iith.ac.in
+          </a></p>
+        </div>
+      </div>
+
+      <!-- Social Media & Video Section -->
+      <div class="footer-section">
+        <h3 class="footer-title">Connect With Us</h3>
+        
+        <!-- Featured Video -->
+        <div class="footer-video">
+          <iframe src="https://www.youtube.com/embed/h7DYfhr7cVw" 
+                  title="KRC Introduction Video" 
+                  frameborder="0" 
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                  allowfullscreen>
+          </iframe>
+        </div>
+
+        <!-- Social Media Links -->
+        <div class="social-media">
+          <a href="https://www.linkedin.com/in/iithkrc/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+          <a href="https://www.facebook.com/profile.php?id=61557692713663" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+          <a href="https://x.com/iithkrc" target="_blank" rel="noopener noreferrer" aria-label="Twitter/X">
+            <i class="fab fa-x-twitter"></i>
+          </a>
+          <a href="https://www.instagram.com/iithkrc/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a href="https://www.youtube.com/@IITHKRC" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+            <i class="fab fa-youtube"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Location Section -->
+      <div class="footer-section">
+        <h3 class="footer-title">Our Location</h3>
+        <div class="footer-map">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7606.4421871448885!2d78.124502!3d17.592233!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcbf198c170be3d%3A0x970af2e61e40f68c!2sKnowledge%20Research%20Centre%20(Central%20Library)%2C%20IITH!5e0!3m2!1sen!2sin!4v1736248326052!5m2!1sen!2sin"
+                  width="100%" 
+                  height="200" 
+                  style="border:0;" 
+                  allowfullscreen="" 
+                  loading="lazy" 
+                  referrerpolicy="no-referrer-when-downgrade"
+                  title="KRC Location Map">
+          </iframe>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer Bottom -->
+    <div class="footer-bottom">
+      <p>&copy; 2025 Indian Institute of Technology Hyderabad, Kandi, Sangareddy, Telangana, India. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="assets/js/modern-carousel.js"></script>
+  <script>
+    // Force carousel initialization
+    setTimeout(() => {
+      if (window.ModernCarousel) {
+        console.log('Manually triggering carousel auto-init');
+        ModernCarousel.autoInit();
+      }
+    }, 100);
+  </script>
+  <!-- <script src="assets/js/new-arrivals.js"></script> --> <!-- Commented out - will be added back when content is ready -->
+  <script type="text/javascript">
+ function googleTranslateElementInit() {
+              new google.translate.TranslateElement({pageLanguage: 'en', includedLanguages: 'en,hi,te', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+            }
+</script>
+
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+<script>
+  // Toggle search forms
+  const kohaBtn = document.getElementById('kohaBtn');
+  const summonsBtn = document.getElementById('summonsBtn');
+  const dspaceBtn = document.getElementById('dspaceBtn');
+  const kohaForm = document.getElementById('kohaForm');
+  const summonsForm = document.getElementById('summonsForm');
+  const dspaceForm = document.getElementById('dspaceForm');
+  const advancedBtn = document.getElementById('advancedBtn');
+
+  kohaBtn.addEventListener('click', () => {
+    kohaBtn.classList.add('active');
+    summonsBtn.classList.remove('active');
+    dspaceBtn.classList.remove('active');
+    kohaForm.classList.add('active');
+    summonsForm.classList.remove('active');
+    dspaceForm.classList.remove('active');
+  });
+
+  summonsBtn.addEventListener('click', () => {
+    kohaBtn.classList.remove('active');
+    summonsBtn.classList.add('active');
+    dspaceBtn.classList.remove('active');
+    kohaForm.classList.remove('active');
+    summonsForm.classList.add('active');
+    dspaceForm.classList.remove('active');
+  });
+
+  dspaceBtn.addEventListener('click', () => {
+    kohaBtn.classList.remove('active');
+    summonsBtn.classList.remove('active');
+    dspaceBtn.classList.add('active');
+    kohaForm.classList.remove('active');
+    summonsForm.classList.remove('active');
+    dspaceForm.classList.add('active');
+  });
+
+  advancedBtn.addEventListener("click", () => {
+    window.open('https://iith.summon.serialssolutions.com/#!/advanced', '_blank');
+    console.log("Button is clicked");
+  });
+
+  // Debug carousel initialization
+  console.log('Checking for carousel...');
+  document.addEventListener('DOMContentLoaded', () => {
+    console.log('DOM loaded');
+    const carousel = document.querySelector('.modern-carousel');
+    console.log('Carousel element:', carousel);
+    if (window.ModernCarousel) {
+      console.log('ModernCarousel class available');
+    } else {
+      console.log('ModernCarousel class NOT available');
+    }
+  });
+</script>
+<script src="assets/js/stats.js"></script>
+<script>
+// New Mobile Dropdown Menu Script
+console.log('Mobile dropdown menu script loaded');
+
+document.addEventListener('DOMContentLoaded', function() {
+  const mobileToggle = document.getElementById('mobileMenuToggle');
+  const mobileMenu = document.getElementById('mobileDropdownMenu');
+  
+  console.log('Mobile toggle:', mobileToggle);
+  console.log('Mobile menu:', mobileMenu);
+  
+  if (mobileToggle && mobileMenu) {
+    mobileToggle.addEventListener('click', function(e) {
+      e.preventDefault();
+      console.log('Mobile menu toggle clicked!');
+      
+      // Toggle menu visibility
+      if (mobileMenu.style.display === 'block') {
+        mobileMenu.style.display = 'none';
+        mobileToggle.classList.remove('active');
+      } else {
+        mobileMenu.style.display = 'block';
+        mobileToggle.classList.add('active');
+      }
+      
+      console.log('Mobile menu toggled');
+    });
+  }
+  
+  // Dropdown functionality for mobile submenus
+  const dropdownTriggers = document.querySelectorAll('[data-toggle]');
+  dropdownTriggers.forEach(trigger => {
+    trigger.addEventListener('click', function(e) {
+      e.preventDefault();
+      const targetId = this.getAttribute('data-toggle');
+      const submenu = document.getElementById(targetId);
+      const parentItem = this.closest('.mobile-menu-item');
+      
+      if (submenu) {
+        // Toggle submenu
+        if (submenu.style.display === 'block') {
+          submenu.style.display = 'none';
+          parentItem.classList.remove('active');
+        } else {
+          // Close other submenus
+          document.querySelectorAll('.mobile-submenu').forEach(sub => {
+            sub.style.display = 'none';
+          });
+          document.querySelectorAll('.mobile-menu-item.dropdown').forEach(item => {
+            item.classList.remove('active');
+          });
+          
+          // Open this submenu
+          submenu.style.display = 'block';
+          parentItem.classList.add('active');
+        }
+      }
+    });
+  });
+  
+  // Close menu when clicking outside (optional)
+  document.addEventListener('click', function(e) {
+    if (mobileMenu && mobileToggle) {
+      if (!mobileMenu.contains(e.target) && !mobileToggle.contains(e.target)) {
+        if (mobileMenu.style.display === 'block') {
+          mobileMenu.style.display = 'none';
+          mobileToggle.classList.remove('active');
+        }
+      }
+    }
+  });
+  
+  // Handle window resize - close mobile menu on larger screens
+  let resizeTimer;
+  window.addEventListener('resize', function() {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(function() {
+      if (mobileMenu && mobileToggle) {
+        // If screen is larger than 768px, close mobile menu
+        if (window.innerWidth > 768) {
+          if (mobileMenu.style.display === 'block') {
+            mobileMenu.style.display = 'none';
+            mobileToggle.classList.remove('active');
+            
+            // Also close all submenus
+            document.querySelectorAll('.mobile-submenu').forEach(sub => {
+              sub.style.display = 'none';
+            });
+            document.querySelectorAll('.mobile-menu-item.dropdown').forEach(item => {
+              item.classList.remove('active');
+            });
+            
+            console.log('Mobile menu closed due to screen resize');
+          }
+        }
+      }
+    }, 100); // Debounce resize events
+  });
+});
+</script>
+</body>
+</html>
