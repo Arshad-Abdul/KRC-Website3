@@ -1,5 +1,65 @@
 /* Quick Links Section Styles for IIT Hyderabad KRC Website */
 
+/* Quick Links Header Section */
+.quick-links-header-section {
+  background: linear-gradient(135deg, #e74c3c, #c0392b);
+  padding: var(--spacing-lg) 0;
+  text-align: center;
+  color: white;
+  position: relative;
+}
+
+.quick-links-header-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.1);
+  z-index: 1;
+}
+
+.quick-links-header-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-md);
+  position: relative;
+  z-index: 2;
+}
+
+.quick-links-main-heading {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: var(--spacing-sm);
+  text-shadow: 0 3px 6px rgba(0, 0, 0, 0.4);
+  color: #ffffff !important;
+}
+
+.quick-links-description {
+  font-size: 1.1rem;
+  opacity: 1;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.5;
+  color: #ffffff !important;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+@media (max-width: 768px) {
+  .quick-links-main-heading {
+    font-size: 2rem;
+  }
+  
+  .quick-links-description {
+    font-size: 1rem;
+  }
+  
+  .quick-links-header-section {
+    padding: var(--spacing-md) 0;
+  }
+}
+
 .quick-links-section {
   background: var(--white);
   padding: var(--spacing-3xl) 0;
@@ -23,11 +83,12 @@
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 var(--spacing-md);
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: var(--spacing-xl);
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-md);
   position: relative;
   z-index: 2;
+  justify-content: center;
 }
 
 /* Quick Link Box */
@@ -39,7 +100,46 @@
   transition: all var(--transition-normal);
   box-shadow: var(--shadow-sm);
   border: 1px solid rgba(45, 53, 97, 0.1);
-  height: 100%;
+  height: auto;
+  min-height: 120px;
+  flex: 1 1 auto;
+  min-width: 280px;
+  max-width: 300px;
+}
+
+/* Responsive behavior */
+@media (min-width: 1200px) {
+  .quick-link-box {
+    flex: 1 1 calc(12.5% - var(--spacing-md));
+    max-width: calc(12.5% - var(--spacing-md));
+  }
+}
+
+@media (max-width: 1199px) and (min-width: 769px) {
+  .quick-link-box {
+    flex: 1 1 calc(25% - var(--spacing-md));
+    max-width: calc(25% - var(--spacing-md));
+  }
+}
+
+@media (max-width: 768px) {
+  .quick-link-box {
+    flex: 1 1 calc(50% - var(--spacing-sm));
+    max-width: calc(50% - var(--spacing-sm));
+    min-width: calc(50% - var(--spacing-sm));
+  }
+  
+  .quick-links-container {
+    gap: var(--spacing-sm);
+  }
+}
+
+@media (max-width: 480px) {
+  .quick-link-box {
+    flex: 1 1 100%;
+    max-width: 100%;
+    min-width: 100%;
+  }
 }
 
 .quick-link-box::before {

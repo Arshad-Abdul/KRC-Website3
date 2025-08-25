@@ -1,5 +1,65 @@
 /* Content Boxes Section Styles for IIT Hyderabad KRC Website */
 
+/* Content Boxes Header Section */
+.content-boxes-header-section {
+  background: linear-gradient(135deg, #2c5aa0, #1e3d72);
+  padding: var(--spacing-lg) 0;
+  text-align: center;
+  color: white;
+  position: relative;
+}
+
+.content-boxes-header-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.1);
+  z-index: 1;
+}
+
+.content-boxes-header-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-md);
+  position: relative;
+  z-index: 2;
+}
+
+.content-boxes-main-heading {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: var(--spacing-sm);
+  text-shadow: 0 3px 6px rgba(0, 0, 0, 0.4);
+  color: #ffffff !important;
+}
+
+.content-boxes-description {
+  font-size: 1.1rem;
+  opacity: 1;
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.5;
+  color: #ffffff !important;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+@media (max-width: 768px) {
+  .content-boxes-main-heading {
+    font-size: 2rem;
+  }
+  
+  .content-boxes-description {
+    font-size: 1rem;
+  }
+  
+  .content-boxes-header-section {
+    padding: var(--spacing-md) 0;
+  }
+}
+
 /* Main Container */
 .content-boxes-section {
   background: linear-gradient(135deg, var(--background-light) 0%, var(--white) 100%);

@@ -1,5 +1,48 @@
 /* Statistics Section Styles for IIT Hyderabad KRC Website */
 
+/* Stats Header Section */
+.stats-header-section {
+  background: linear-gradient(135deg, var(--accent-color), #2980b9);
+  padding: var(--spacing-lg) 0;
+  text-align: center;
+  color: white;
+}
+
+.stats-header-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-md);
+}
+
+.stats-main-heading {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: var(--spacing-sm);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.stats-description {
+  font-size: 1.1rem;
+  opacity: 0.9;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+  .stats-main-heading {
+    font-size: 2rem;
+  }
+  
+  .stats-description {
+    font-size: 1rem;
+  }
+  
+  .stats-header-section {
+    padding: var(--spacing-md) 0;
+  }
+}
+
 .stats-section {
   background: var(--gradient-primary);
   padding: var(--spacing-3xl) 0;

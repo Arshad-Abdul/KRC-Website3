@@ -1,5 +1,48 @@
 /* Search Box Styles for IIT Hyderabad KRC Website */
 
+/* Search Header Section */
+.search-header-section {
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  padding: var(--spacing-lg) 0;
+  text-align: center;
+  color: white;
+}
+
+.search-header-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-md);
+}
+
+.search-main-heading {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: var(--spacing-sm);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.search-description {
+  font-size: 1.1rem;
+  opacity: 0.9;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+  .search-main-heading {
+    font-size: 2rem;
+  }
+  
+  .search-description {
+    font-size: 1rem;
+  }
+  
+  .search-header-section {
+    padding: var(--spacing-md) 0;
+  }
+}
+
 .search-toggle-section {
   background: linear-gradient(135deg, var(--light-gray) 0%, var(--white) 100%);
   padding: var(--spacing-3xl) 0;
