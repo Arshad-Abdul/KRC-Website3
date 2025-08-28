@@ -3,7 +3,7 @@
 /* Search Header Section */
 .search-header-section {
   background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-  padding: var(--spacing-lg) 0;
+  padding: var(--spacing-md) 0;
   text-align: center;
   color: white;
 }
@@ -15,9 +15,9 @@
 }
 
 .search-main-heading {
-  font-size: 2.5rem;
+  font-size: 2rem;
   font-weight: 700;
-  margin-bottom: var(--spacing-sm);
+  margin-bottom: var(--spacing-xs);
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
@@ -45,7 +45,7 @@
 
 .search-toggle-section {
   background: linear-gradient(135deg, var(--light-gray) 0%, var(--white) 100%);
-  padding: var(--spacing-3xl) 0;
+  padding: var(--spacing-xl) 0;
   position: relative;
   overflow: hidden;
 }

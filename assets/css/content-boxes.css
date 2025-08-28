@@ -3,7 +3,7 @@
 /* Content Boxes Header Section */
 .content-boxes-header-section {
   background: linear-gradient(135deg, #2c5aa0, #1e3d72);
-  padding: var(--spacing-lg) 0;
+  padding: var(--spacing-md) 0;
   text-align: center;
   color: white;
   position: relative;
@@ -29,9 +29,9 @@
 }
 
 .content-boxes-main-heading {
-  font-size: 2.5rem;
+  font-size: 2rem;
   font-weight: 700;
-  margin-bottom: var(--spacing-sm);
+  margin-bottom: var(--spacing-xs);
   text-shadow: 0 3px 6px rgba(0, 0, 0, 0.4);
   color: #ffffff !important;
 }
@@ -63,7 +63,7 @@
 /* Main Container */
 .content-boxes-section {
   background: linear-gradient(135deg, var(--background-light) 0%, var(--white) 100%);
-  padding: var(--spacing-2xl) 0;
+  padding: var(--spacing-lg) 0;
   position: relative;
 }
 
@@ -73,7 +73,7 @@
   padding: 0 var(--spacing-md);
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-  gap: var(--spacing-xl);
+  gap: var(--spacing-lg);
 }
 
 /* Universal Box Styling */
@@ -96,7 +96,7 @@
 .box-header {
   background: linear-gradient(135deg, var(--primary-navy) 0%, var(--primary-teal) 100%);
   color: var(--white);
-  padding: var(--spacing-lg);
+  padding: var(--spacing-md);
   text-align: center;
 }
 

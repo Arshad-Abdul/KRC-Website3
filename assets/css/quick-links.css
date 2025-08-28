@@ -3,7 +3,7 @@
 /* Quick Links Header Section */
 .quick-links-header-section {
   background: linear-gradient(135deg, #e74c3c, #c0392b);
-  padding: var(--spacing-lg) 0;
+  padding: var(--spacing-md) 0;
   text-align: center;
   color: white;
   position: relative;
@@ -29,9 +29,9 @@
 }
 
 .quick-links-main-heading {
-  font-size: 2.5rem;
+  font-size: 2rem;
   font-weight: 700;
-  margin-bottom: var(--spacing-sm);
+  margin-bottom: var(--spacing-xs);
   text-shadow: 0 3px 6px rgba(0, 0, 0, 0.4);
   color: #ffffff !important;
 }
@@ -62,7 +62,7 @@
 
 .quick-links-section {
   background: var(--white);
-  padding: var(--spacing-3xl) 0;
+  padding: var(--spacing-lg) 0;
   position: relative;
   overflow: hidden;
 }
@@ -101,7 +101,7 @@
   box-shadow: var(--shadow-sm);
   border: 1px solid rgba(45, 53, 97, 0.1);
   height: auto;
-  min-height: 120px;
+  min-height: 100px;
   flex: 1 1 auto;
   min-width: 280px;
   max-width: 300px;

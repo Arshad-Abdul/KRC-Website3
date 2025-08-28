@@ -2,7 +2,7 @@
 
 .new-arrivals {
   background: linear-gradient(135deg, var(--background-light) 0%, var(--white) 100%);
-  padding: var(--spacing-3xl) 0;
+  padding: var(--spacing-lg) 0;
   position: relative;
   overflow: hidden;
 }
@@ -21,7 +21,7 @@
 /* Section Header */
 .na-heading {
   text-align: center;
-  margin-bottom: var(--spacing-2xl);
+  margin-bottom: var(--spacing-md);
   position: relative;
   z-index: 2;
 }
