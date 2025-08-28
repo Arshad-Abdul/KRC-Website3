@@ -8,6 +8,24 @@
   color: white;
 }
 
+/* Hide search header on large screens when overlaying carousel */
+@media (min-width: 1024px) {
+  .search-header-section {
+    display: none;
+  }
+}
+
+/* On mobile/tablet, hide the overlay search and show the regular one */
+@media (max-width: 1023px) {
+  #search-overlay {
+    display: none !important;
+  }
+  
+  #search {
+    display: block !important;
+  }
+}
+
 .search-header-container {
   max-width: 1200px;
   margin: 0 auto;
@@ -48,6 +66,76 @@
   padding: var(--spacing-xl) 0;
   position: relative;
   overflow: hidden;
+}
+
+/* Overlay search on carousel for large screens */
+@media (min-width: 1024px) {
+  /* Hide the regular search section */
+  #search {
+    display: none !important;
+  }
+  
+  /* Show and position the overlay search section */
+  #search-overlay {
+    position: absolute !important;
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    width: 90% !important;
+    max-width: 1000px !important;
+    z-index: 10 !important;
+    background: rgba(255, 255, 255, 0.08) !important;
+    backdrop-filter: blur(20px) saturate(180%);
+    border-radius: var(--radius-xl);
+    box-shadow: 
+      0 8px 32px rgba(31, 38, 135, 0.37),
+      0 0 0 1px rgba(255, 255, 255, 0.18),
+      inset 0 1px 0 rgba(255, 255, 255, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    padding: var(--spacing-xl) !important;
+    margin: 0 !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    display: block !important;
+    animation: fadeInGlass 0.6s ease-out;
+  }
+  
+  /* Magical fade-in animation */
+  @keyframes fadeInGlass {
+    from {
+      opacity: 0;
+      transform: translate(-50%, -50%) scale(0.9);
+      backdrop-filter: blur(5px);
+    }
+    to {
+      opacity: 1;
+      transform: translate(-50%, -50%) scale(1);
+      backdrop-filter: blur(20px) saturate(180%);
+    }
+  }
+  
+  .search-toggle-section::before {
+    display: none; /* Hide background pattern when overlaid */
+  }
+  
+  .search-forms {
+    padding: 0; /* Remove extra padding when overlaid */
+    margin: 0;
+  }
+  
+  .search-form-buttons {
+    margin-bottom: var(--spacing-xl); /* More elegant spacing for overlay */
+  }
+  
+  /* Glass effect for individual forms in overlay */
+  .search-form {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-lg);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  }
 }
 
 .search-toggle-section::before {
@@ -258,7 +346,8 @@
 /* Removed duplicate form element styles - using universal styles above */
 
 /* Toggle Buttons */
-.search-toggle-buttons {
+.search-toggle-buttons,
+.search-form-buttons {
   display: flex;
   justify-content: center;
   gap: var(--spacing-sm);
@@ -268,77 +357,140 @@
   padding: 0 var(--spacing-md);
 }
 
-.search-toggle-buttons button {
-  padding: var(--spacing-md) var(--spacing-lg);
-  background: var(--white);
+.search-toggle-buttons button,
+.search-toggle-btn {
+  padding: var(--spacing-sm) var(--spacing-md);
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
   color: var(--primary-navy);
-  border: 2px solid var(--primary-navy);
-  border-radius: var(--radius-lg);
-  font-size: var(--font-size-sm);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: var(--radius-md);
+  font-size: var(--font-size-xs);
   font-weight: 500;
   cursor: pointer;
-  transition: all var(--transition-fast);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
   overflow: hidden;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: var(--spacing-xs);
-  min-width: 140px;
+  gap: 4px;
+  min-width: 100px;
+  max-width: 120px;
   text-align: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
-.search-toggle-buttons button i {
-  font-size: var(--font-size-lg);
-  margin-bottom: var(--spacing-xs);
+.search-toggle-buttons button i,
+.search-toggle-btn i {
+  font-size: var(--font-size-base);
+  margin-bottom: 2px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.search-toggle-buttons button span {
+.search-toggle-buttons button span,
+.search-toggle-btn .btn-title {
   font-weight: 600;
-  line-height: 1.2;
+  line-height: 1.1;
+  font-size: 11px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.search-toggle-buttons button small {
-  font-size: var(--font-size-xs);
+.search-toggle-buttons button small,
+.search-toggle-btn .btn-subtitle {
+  font-size: 9px;
   opacity: 0.7;
   font-weight: 400;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.search-toggle-buttons button::before {
+.search-toggle-buttons button::before,
+.search-toggle-btn::before {
   content: '';
   position: absolute;
   top: 0;
   left: 0;
   width: 0;
   height: 100%;
-  background: var(--gradient-primary);
+  background: var(--primary-navy); /* Default fallback */
   transition: width var(--transition-normal);
   z-index: -1;
 }
 
-.search-toggle-buttons button span {
+.search-toggle-buttons button span,
+.search-toggle-btn .btn-content {
   position: relative;
   z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-xs);
 }
 
-.search-toggle-buttons button:hover::before {
+/* Style the button text wrapper */
+.search-toggle-btn .btn-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+}
+
+.search-toggle-buttons button:hover::before,
+.search-toggle-btn:hover::before {
   width: 100%;
 }
 
-.search-toggle-buttons button:hover {
-  color: var(--white);
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-md);
+.search-toggle-buttons button:hover,
+.search-toggle-btn:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 
+    0 8px 25px rgba(0, 0, 0, 0.15),
+    0 0 20px rgba(255, 255, 255, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.4);
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(15px) saturate(200%);
+  border-color: rgba(255, 255, 255, 0.4);
 }
 
-.search-toggle-buttons button.active {
-  background: var(--gradient-primary);
-  color: var(--white);
-  box-shadow: var(--shadow-md);
-  transform: translateY(-2px);
+/* Magical icon animation on hover */
+.search-toggle-buttons button:hover i,
+.search-toggle-btn:hover i {
+  transform: scale(1.2) rotate(5deg);
+  filter: drop-shadow(0 0 8px currentColor);
 }
 
-.search-toggle-buttons button.active::before {
+/* Text glow effect on hover */
+.search-toggle-buttons button:hover span,
+.search-toggle-btn:hover .btn-title {
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+}
+
+.search-toggle-buttons button:hover small,
+.search-toggle-btn:hover .btn-subtitle {
+  opacity: 0.9;
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.6);
+}
+
+.search-toggle-buttons button.active,
+.search-toggle-btn.active {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 
+    0 6px 20px rgba(0, 0, 0, 0.2),
+    0 0 15px rgba(255, 255, 255, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(12px) saturate(150%);
+}
+
+/* Active icon effects */
+.search-toggle-buttons button.active i,
+.search-toggle-btn.active i {
+  transform: scale(1.1);
+  filter: drop-shadow(0 0 5px currentColor);
+}
+
+.search-toggle-buttons button.active::before,
+.search-toggle-btn.active::before {
   width: 100%;
 }
 
@@ -440,28 +592,33 @@
   
 
   
-  .search-toggle-buttons {
+  .search-toggle-buttons,
+  .search-form-buttons {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: var(--spacing-sm);
     padding: 0 var(--spacing-sm);
   }
   
-  .search-toggle-buttons button {
+  .search-toggle-buttons button,
+  .search-toggle-btn {
     min-width: auto;
     padding: var(--spacing-sm);
     font-size: var(--font-size-xs);
   }
   
-  .search-toggle-buttons button i {
+  .search-toggle-buttons button i,
+  .search-toggle-btn i {
     font-size: var(--font-size-base);
   }
   
-  .search-toggle-buttons button span {
+  .search-toggle-buttons button span,
+  .search-toggle-btn .btn-title {
     font-size: var(--font-size-xs);
   }
   
-  .search-toggle-buttons button small {
+  .search-toggle-buttons button small,
+  .search-toggle-btn .btn-subtitle {
     font-size: 10px;
   }
 }
@@ -527,28 +684,33 @@
     margin-bottom: 0;
   }
   
-  .search-toggle-buttons {
+  .search-toggle-buttons,
+  .search-form-buttons {
     grid-template-columns: 1fr;
     gap: var(--spacing-xs);
     padding: 0 var(--spacing-xs);
   }
   
-  .search-toggle-buttons button {
+  .search-toggle-buttons button,
+  .search-toggle-btn {
     padding: var(--spacing-xs) var(--spacing-sm);
     min-height: 60px;
   }
   
-  .search-toggle-buttons button i {
+  .search-toggle-buttons button i,
+  .search-toggle-btn i {
     font-size: var(--font-size-sm);
     margin-bottom: 2px;
   }
   
-  .search-toggle-buttons button span {
+  .search-toggle-buttons button span,
+  .search-toggle-btn .btn-title {
     font-size: 11px;
     line-height: 1.1;
   }
   
-  .search-toggle-buttons button small {
+  .search-toggle-buttons button small,
+  .search-toggle-btn .btn-subtitle {
     font-size: 9px;
   }
 }
@@ -582,7 +744,8 @@
 @media (prefers-reduced-motion: reduce) {
   .search-form,
   .search-form button,
-  .search-toggle-buttons button {
+  .search-toggle-buttons button,
+  .search-toggle-btn {
     animation: none !important;
     transition: none !important;
   }
@@ -599,7 +762,8 @@
     border-width: 2px;
   }
   
-  .search-toggle-buttons button {
+  .search-toggle-buttons button,
+  .search-toggle-btn {
     border-width: 3px;
   }
 }
@@ -617,48 +781,84 @@
 }
 
 /* Color-coded search type indicators */
-.search-toggle-buttons button[data-search-type="books"] {
+.search-toggle-buttons button[data-search-type="books"],
+.search-toggle-btn[data-target="kohaForm"] {
   border-color: #2c5aa0;
   color: #2c5aa0;
 }
 
 .search-toggle-buttons button[data-search-type="books"].active,
-.search-toggle-buttons button[data-search-type="books"]:hover {
+.search-toggle-buttons button[data-search-type="books"]:hover,
+.search-toggle-btn[data-target="kohaForm"].active,
+.search-toggle-btn[data-target="kohaForm"]:hover {
   background: #2c5aa0;
   color: white;
 }
 
-.search-toggle-buttons button[data-search-type="digital"] {
+.search-toggle-buttons button[data-search-type="books"]::before,
+.search-toggle-btn[data-target="kohaForm"]::before {
+  background: #2c5aa0;
+}
+
+.search-toggle-buttons button[data-search-type="digital"],
+.search-toggle-btn[data-target="summonsForm"] {
   border-color: #e74c3c;
   color: #e74c3c;
 }
 
 .search-toggle-buttons button[data-search-type="digital"].active,
-.search-toggle-buttons button[data-search-type="digital"]:hover {
+.search-toggle-buttons button[data-search-type="digital"]:hover,
+.search-toggle-btn[data-target="summonsForm"].active,
+.search-toggle-btn[data-target="summonsForm"]:hover {
   background: #e74c3c;
   color: white;
 }
 
-.search-toggle-buttons button[data-search-type="repository"] {
+.search-toggle-buttons button[data-search-type="digital"]::before,
+.search-toggle-btn[data-target="summonsForm"]::before {
+  background: #e74c3c;
+}
+
+.search-toggle-buttons button[data-search-type="repository"],
+.search-toggle-btn[data-target="dspaceForm"] {
   border-color: #8e44ad;
   color: #8e44ad;
 }
 
 .search-toggle-buttons button[data-search-type="repository"].active,
-.search-toggle-buttons button[data-search-type="repository"]:hover {
+.search-toggle-buttons button[data-search-type="repository"]:hover,
+.search-toggle-btn[data-target="dspaceForm"].active,
+.search-toggle-btn[data-target="dspaceForm"]:hover {
   background: #8e44ad;
   color: white;
 }
 
-.search-toggle-buttons button[data-search-type="advanced"] {
+.search-toggle-buttons button[data-search-type="repository"]::before,
+.search-toggle-btn[data-target="dspaceForm"]::before {
+  background: #8e44ad;
+}
+
+.search-toggle-buttons button[data-search-type="advanced"],
+.search-toggle-btn[data-search-type="advanced"],
+#advancedBtn {
   border-color: #f39c12;
   color: #f39c12;
 }
 
 .search-toggle-buttons button[data-search-type="advanced"].active,
-.search-toggle-buttons button[data-search-type="advanced"]:hover {
+.search-toggle-buttons button[data-search-type="advanced"]:hover,
+.search-toggle-btn[data-search-type="advanced"].active,
+.search-toggle-btn[data-search-type="advanced"]:hover,
+#advancedBtn.active,
+#advancedBtn:hover {
   background: #f39c12;
   color: white;
+}
+
+.search-toggle-buttons button[data-search-type="advanced"]::before,
+.search-toggle-btn[data-search-type="advanced"]::before,
+#advancedBtn::before {
+  background: #f39c12;
 }
 
 /* ========================================

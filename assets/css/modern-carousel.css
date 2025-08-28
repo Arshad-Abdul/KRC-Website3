@@ -7,6 +7,29 @@
   overflow: hidden;
 }
 
+/* On large screens, hero should contain the overlaid search */
+@media (min-width: 1024px) {
+  .hero {
+    position: relative;
+    z-index: 1;
+  }
+  
+  /* Hide navigation buttons when search is overlaid */
+  .mc-btn {
+    display: none;
+  }
+  
+  /* Hide dots navigation when search is overlaid */
+  .mc-dots {
+    display: none;
+  }
+  
+  /* Hide card content (text overlay) when search is overlaid */
+  .mc-card-body {
+    display: none;
+  }
+}
+
 .modern-carousel {
   position: relative;
   width: 100%;

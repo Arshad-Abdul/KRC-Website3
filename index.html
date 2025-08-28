@@ -241,6 +241,122 @@
 
       <div class="mc-dots" aria-label="Choose slide"></div>
     </div>
+    
+    <!-- Toggleable Search Box Section - Overlaid on Carousel for Large Screens -->
+    <section id="search-overlay" class="search-toggle-section">
+      <div class="search-forms">
+              <!-- Koha -->
+      <form id="kohaForm" class="search-form active koha-search-form" action="https://catalogue.krc.iith.ac.in/cgi-bin/koha/opac-search.pl" method="get" target="_blank">
+        <div class="koha-filters">
+          <select name="idx" class="koha-search-select">
+            <option value="" disabled selected>Search By</option>
+              <option value="ti">Title</option>
+              <option value="au">Author</option>
+              <option value="su">Subject</option>
+              <option value="nb">ISBN</option>            
+              <option value="callnum">Call Number</option>
+            <option value="bc">Accession Number</option>
+          </select>
+      </div>
+        <input type="text" name="q" placeholder="Search Your Books Here..." required class="koha-search-input" />
+        <div class="koha-scope">
+          <select name="limit" class="koha-search-select">
+            <option value="" disabled selected>Item Type</option>
+              <option value="mc-itype:BK">Books</option>
+              <option value="mc-itype:TB">Textbooks</option>
+              <option value="mc-itype:EB">eBooks</option>
+              <option value="mc-itype:MIT">MIT</option>
+              <option value="mc-itype:CR">Course Reserves</option>
+              <option value="mc-itype:RAJBHASHA">Regional Language Books</option>
+              <option value="mc-itype:TELGU">Telugu Books</option>             
+          </select>
+      </div>
+        <button type="submit" class="koha-search-button"><i class="fa fa-search"></i> Search</button>
+      </form>
+      <!-- Summon Form -->
+      <form id="summonsForm" class="search-form summon-search-form" action="https://iith.summon.serialssolutions.com/" method="get" target="_blank">
+        <label for="summonsSearch" class="summon-search-label">Search Summons</label>
+        <input type="text" name="s.q" placeholder="Enter Your Searching Term Here..." required class="summon-search-input">
+        <button type="submit" class="summon-search-button"><i class="fa fa-search"></i> Search</button>
+      </form>
+      <!-- RAIITH -->
+      <form id="dspaceForm" class="search-form raiith-search-form" action="https://raiith.krc.iith.ac.in/simple-search" method="get" target="_blank">
+        <div class="raiith-filters">
+          <select name="filtername" class="raiith-search-select">
+            <option value="">All Content Types</option>
+            <option value="Article">Article</option>
+            <option value="Thesis">Thesis</option>
+            <option value="Conference paper">Conference Paper</option>
+            <option value="Book chapter">Book Chapter</option>
+            <option value="Book">Book</option>
+            <option value="Review">Review</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+        <input type="text" name="query" placeholder="Search Repository@RAIITH" required class="raiith-search-input" />
+        <div class="raiith-scope">
+          <select name="scope" class="raiith-search-select">
+            <option value="">All of IITH</option>
+            <option value="10766/81">Computer Science and Engineering</option>
+            <option value="10766/82">Electrical Engineering</option>
+            <option value="10766/83">Civil Engineering</option>
+            <option value="10766/84">Mechanical and Aerospace Engineering</option>
+            <option value="10766/85">Materials Science and Metallurgical Engineering</option>
+            <option value="10766/86">Chemical Engineering</option>
+            <option value="10766/87">Biomedical Engineering</option>
+            <option value="10766/88">Biotechnology and Bioinformatics</option>
+            <option value="10766/89">Chemistry</option>
+            <option value="10766/90">Physics</option>
+            <option value="10766/91">Mathematics</option>
+            <option value="10766/92">Liberal Arts</option>
+            <option value="10766/93">Academic Administrative Positions</option>
+            <option value="10766/94">Faculty and Staff Publications</option>
+          </select>
+        </div>
+        <button type="submit" class="raiith-search-button"><i class="fa fa-search"></i> Search</button>
+      </form>
+
+        <!-- Toggle Buttons -->
+        <div class="search-form-buttons">
+          <button type="button" class="search-toggle-btn active" data-target="kohaForm">
+            <div class="btn-content">
+              <i class="fa-solid fa-book"></i>
+              <div class="btn-text">
+                <span class="btn-title">Koha</span>
+                <span class="btn-subtitle">Library Catalogue</span>
+              </div>
+            </div>
+          </button>
+          <button type="button" class="search-toggle-btn" data-target="summonsForm">
+            <div class="btn-content">
+              <i class="fa-solid fa-globe"></i>
+              <div class="btn-text">
+                <span class="btn-title">Summon</span>
+                <span class="btn-subtitle">Discovery Service</span>
+              </div>
+            </div>
+          </button>
+          <button type="button" class="search-toggle-btn" data-target="dspaceForm">
+            <div class="btn-content">
+              <i class="fa-solid fa-graduation-cap"></i>
+              <div class="btn-text">
+                <span class="btn-title">RAIITH</span>
+                <span class="btn-subtitle">Institutional Repository</span>
+              </div>
+            </div>
+          </button>
+          <button type="button" id="advancedBtn" class="search-toggle-btn" data-search-type="advanced">
+            <div class="btn-content">
+              <i class="fa-solid fa-cogs"></i>
+              <div class="btn-text">
+                <span class="btn-title">Advanced</span>
+                <span class="btn-subtitle">Search Options</span>
+              </div>
+            </div>
+          </button>
+        </div>
+      </div>
+    </section>
   </section>
  
 
@@ -1024,6 +1140,37 @@
   advancedBtn.addEventListener("click", () => {
     window.open('https://iith.summon.serialssolutions.com/#!/advanced', '_blank');
     console.log("Button is clicked");
+  });
+
+  // Toggle functionality for new search buttons (with data-target)
+  const searchToggleBtns = document.querySelectorAll('.search-toggle-btn');
+  
+  searchToggleBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const targetFormId = btn.getAttribute('data-target');
+      const searchType = btn.getAttribute('data-search-type');
+      
+      // Handle advanced search button
+      if (searchType === 'advanced' || btn.id === 'advancedBtn') {
+        window.open('https://iith.summon.serialssolutions.com/#!/advanced', '_blank');
+        console.log("Advanced search button clicked");
+        return;
+      }
+      
+      const targetForm = document.getElementById(targetFormId);
+      
+      if (targetForm) {
+        // Remove active class from all buttons and forms
+        searchToggleBtns.forEach(button => button.classList.remove('active'));
+        document.querySelectorAll('.search-form').forEach(form => form.classList.remove('active'));
+        
+        // Add active class to clicked button and target form
+        btn.classList.add('active');
+        targetForm.classList.add('active');
+        
+        console.log('Switched to form:', targetFormId);
+      }
+    });
   });
 
   // Debug carousel initialization
