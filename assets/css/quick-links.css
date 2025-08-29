@@ -2,7 +2,9 @@
 
 /* Quick Links Header Section */
 .quick-links-header-section {
-  background: linear-gradient(135deg, #e74c3c, #c0392b);
+  /* background: linear-gradient(135deg, #e74c3c, #c0392b); */
+  background: var(--gradient-primary);
+  
   padding: var(--spacing-md) 0;
   text-align: center;
   color: white;
@@ -80,15 +82,15 @@
 }
 
 .quick-links-container {
-  max-width: 1400px;
+  max-width: 1200px;
   margin: 0 auto;
   padding: 0 var(--spacing-md);
   display: flex;
   flex-wrap: wrap;
-  gap: var(--spacing-sm);
+  gap: var(--spacing-md);
   position: relative;
   z-index: 2;
-  justify-content: center;
+  justify-content: space-between;
 }
 
 /* Quick Link Box */
@@ -101,20 +103,14 @@
   box-shadow: var(--shadow-sm);
   border: 1px solid rgba(45, 53, 97, 0.1);
   height: auto;
-  min-height: 100px;
+  min-height: 120px;
   flex: 1 1 auto;
-  min-width: 150px;
-  max-width: calc(12.5% - var(--spacing-sm));
+  width: calc((100% - 7 * var(--spacing-md)) / 8);
+  min-width: calc((100% - 7 * var(--spacing-md)) / 8);
+  max-width: calc((100% - 7 * var(--spacing-md)) / 8);
 }
 
-/* Ensure all 8 boxes fit in one row on large screens */
-@media (min-width: 1200px) {
-  .quick-link-box {
-    flex: 1 1 calc(12.5% - var(--spacing-sm));
-    max-width: calc(12.5% - var(--spacing-sm));
-    min-width: calc(12.5% - var(--spacing-sm));
-  }
-}
+/* Perfect sizing handled by main rule above */
 
 /* Removed duplicate - using the one above */
 
@@ -174,7 +170,7 @@
   flex-direction: column;
   align-items: center;
   text-align: center;
-  padding: var(--spacing-xl);
+  padding: var(--spacing-md);
   color: var(--primary-navy);
   text-decoration: none;
   height: 100%;
@@ -188,14 +184,14 @@
 
 /* Icon Styles */
 .quick-link-icon {
-  width: 80px;
-  height: 80px;
+  width: 55px;
+  height: 55px;
   background: var(--gradient-primary);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: var(--spacing-lg);
+  margin-bottom: var(--spacing-sm);
   transition: all var(--transition-normal);
   position: relative;
   overflow: hidden;
@@ -221,7 +217,7 @@
 }
 
 .quick-link-icon i {
-  font-size: 2rem;
+  font-size: 1.4rem;
   color: var(--white);
   z-index: 2;
   position: relative;
@@ -235,12 +231,13 @@
 
 /* Title Styles */
 .quick-link-title {
-  font-size: var(--font-size-lg);
+  font-size: var(--font-size-sm);
   font-weight: 600;
-  line-height: 1.4;
+  line-height: 1.3;
   color: var(--primary-navy);
   transition: color var(--transition-fast);
   position: relative;
+  text-align: center;
 }
 
 .quick-link:hover .quick-link-title {

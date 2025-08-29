@@ -3,7 +3,7 @@
 .hero {
   position: relative;
   margin-top: 0;
-  background: var(--gradient-primary);
+  /* background: var(--gradient-primary); */
   overflow: hidden;
 }
 

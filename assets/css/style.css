@@ -164,7 +164,7 @@ a:hover {
 
 /* Section Spacing */
 section {
-  padding: var(--spacing-3xl) 0;
+  /* padding: var(--spacing-3xl) 0; */
 }
 
 /* Screen Reader Only */
