@@ -20,9 +20,9 @@
   }
   
   .footer-container {
-    /* max-width: 1200px; */
+    max-width: 1200px;
     margin: 0 auto;
-    /* padding: 0 var(--spacing-lg); */
+    padding: 0 var(--spacing-lg);
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
     gap: var(--spacing-xl);
@@ -203,6 +203,14 @@
     z-index: 2;
     position: relative;
   }
+
+  .social-media a .x-logo {
+    font-size: var(--font-size-lg);
+    font-weight: bold;
+    z-index: 2;
+    position: relative;
+    font-family: "Segoe UI", Arial, sans-serif;
+  }
   
   /* Location Map Section */
   .footer-map {
@@ -278,7 +286,8 @@
       height: 40px;
     }
     
-    .social-media a i {
+    .social-media a i,
+    .social-media a .x-logo {
       font-size: var(--font-size-base);
     }
     
@@ -319,7 +328,8 @@
       height: 35px;
     }
     
-    .social-media a i {
+    .social-media a i,
+    .social-media a .x-logo {
       font-size: var(--font-size-sm);
     }
   }

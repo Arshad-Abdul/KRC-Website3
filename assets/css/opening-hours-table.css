@@ -16,14 +16,14 @@
 .hours-table thead th {
   background: linear-gradient(135deg, var(--primary-navy) 0%, var(--primary-teal) 100%);
   color: var(--white);
-  padding: var(--spacing-md);
+  padding: var(--spacing-sm);
   text-align: left;
   font-weight: 600;
   border: none;
 }
 
 .hours-table tbody td {
-  padding: var(--spacing-md);
+  padding: var(--spacing-sm);
   border-bottom: 1px solid #f0f0f0;
   color: var(--dark-gray);
   transition: background-color var(--transition-fast);
