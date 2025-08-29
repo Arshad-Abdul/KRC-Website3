@@ -33,13 +33,13 @@
   z-index: 5;
 }
 
-/* 🎯 SEAMLESS LOOP - RESTART FROM BEGINNING */
+/* 🎯 PERFECT SEAMLESS LOOP - NO GAP BETWEEN LAST AND FIRST BOOK */
 @keyframes infiniteScroll {
   0% {
-    transform: translateX(100vw);
+    transform: translateX(0);
   }
   100% {
-    transform: translateX(-100%);
+    transform: translateX(-50%);
   }
 }
 
