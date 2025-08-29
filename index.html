@@ -35,8 +35,17 @@
 <body>
   <header class="header">
     <div class="nav_upper">
-        <!-- <div id="google_translate_element"></div> -->
-        <div id="email_id"><i class="fa-solid fa-envelope"></i> office.library@iith.ac.in</div>
+        <div class="nav_upper_container">
+            <div class="nav_upper_left">
+                <div id="google_translate_element"></div>
+                <div class="nav_links">
+                    <a href="https://iith.ac.in" target="_blank" rel="noopener noreferrer">IITH Website</a>
+                    <a href="https://catalogue.ktc.iith.ac.in" target="_blank" rel="noopener noreferrer">OPAC</a>
+                    <a href="https://raiith.krc.iith.ac.in/home" target="_blank" rel="noopener noreferrer">RAIITH</a>
+                </div>
+            </div>
+            <div id="email_id"><i class="fa-solid fa-envelope"></i> office.library@iith.ac.in</div>
+        </div>
     </div>
 
     <nav class="menu">
@@ -1373,13 +1382,7 @@
     }, 100);
   </script>
   <!-- <script src="assets/js/new-arrivals.js"></script> --> <!-- Commented out - will be added back when content is ready -->
-  <script type="text/javascript">
- function googleTranslateElementInit() {
-              new google.translate.TranslateElement({pageLanguage: 'en', includedLanguages: 'en,hi,te', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
-            }
-</script>
-
-<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+  
 <script>
   // Toggle search forms
   const kohaBtn = document.getElementById('kohaBtn');
@@ -1567,5 +1570,19 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 </script>
+
+<!-- Google Translate Script -->
+<script type="text/javascript">
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({
+    pageLanguage: 'en',
+    includedLanguages: 'en,hi,te,ta,ml,kn,bn,gu,mr,pa,or,as,ur',
+    layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+    autoDisplay: false
+  }, 'google_translate_element');
+}
+</script>
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
 </body>
 </html>
