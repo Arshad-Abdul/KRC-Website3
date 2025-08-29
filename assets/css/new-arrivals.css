@@ -7,6 +7,249 @@
   overflow: hidden;
 }
 
+/* ✨ UNIQUE 3D BOOK GALLERY - NEVER SEEN BEFORE ✨ */
+.book-gallery-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-md);
+  position: relative;
+  overflow: hidden;
+  height: 280px;
+  perspective: 1000px;
+  transform-style: preserve-3d;
+  z-index: 100;
+}
+
+.book-gallery-track {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  height: 100%;
+  width: max-content;
+  position: relative;
+  animation: infiniteScroll 60s linear infinite;
+  transform-style: preserve-3d;
+  will-change: transform;
+  z-index: 5;
+}
+
+/* 🎯 SEAMLESS LOOP - RESTART FROM BEGINNING */
+@keyframes infiniteScroll {
+  0% {
+    transform: translateX(100vw);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+/* 📚 INDIVIDUAL BOOK STYLING */
+.book-item {
+  flex-shrink: 0;
+  width: 160px;
+  height: 240px;
+  position: relative;
+  cursor: pointer;
+  transform-style: preserve-3d;
+  transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  filter: brightness(0.9) saturate(0.8);
+  pointer-events: auto !important;
+  z-index: 10;
+}
+
+/* 📏 LINEAR ALIGNMENT - ALL BOOKS IN SAME LINE */
+.book-item:nth-child(3n+1),
+.book-item:nth-child(3n+2),
+.book-item:nth-child(3n+3) {
+  transform: translateY(0px) rotateX(0deg);
+}
+
+/* Removed floating animation */
+
+/* 📖 BOOK COVER STRUCTURE */
+.book-cover {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 
+    0 4px 20px rgba(0, 0, 0, 0.15),
+    0 0 0 2px rgba(255, 255, 255, 0.1),
+    inset 0 0 20px rgba(255, 255, 255, 0.1);
+}
+
+.book-cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 6px;
+  transition: all 0.6s ease;
+  position: relative;
+  z-index: 2;
+}
+
+/* 🎯 STOP ALL BOOKS WHEN ANY BOOK IS HOVERED */
+.book-gallery-container:hover .book-gallery-track {
+  animation-play-state: paused;
+}
+
+/* 🎯 SIMPLE ELEGANT HOVER EFFECTS */
+.book-item:hover {
+  transform: scale(1.1) translateY(-10px);
+  z-index: 50;
+  transition: all 0.3s ease;
+}
+
+.book-item:hover .book-cover {
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+}
+
+/* ✨ VISIBLE GLOW EFFECT */
+.book-glow {
+  position: absolute;
+  top: -15px;
+  left: -15px;
+  right: -15px;
+  bottom: -15px;
+  background: 
+    radial-gradient(circle at 30% 30%, 
+      rgba(59, 130, 246, 0.6) 0%, 
+      rgba(147, 51, 234, 0.5) 30%, 
+      rgba(236, 72, 153, 0.4) 60%, 
+      transparent 100%);
+  border-radius: 20px;
+  opacity: 0;
+  transform: scale(0.9);
+  transition: all 0.4s ease-out;
+  z-index: 1;
+  filter: blur(12px);
+}
+
+.book-item:hover .book-glow {
+  opacity: 1 !important;
+  transform: scale(1.3) !important;
+  transition: all 0.4s ease-out !important;
+}
+
+/* Removed glow pulse animation */
+
+/* 📏 3D BOOK SPINE EFFECT */
+.book-spine {
+  position: absolute;
+  left: -8px;
+  top: 0;
+  width: 8px;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 0.3) 0%,
+    rgba(0, 0, 0, 0.1) 50%,
+    rgba(255, 255, 255, 0.1) 100%
+  );
+  transform-origin: left center;
+  transform: rotateY(-90deg) translateZ(4px);
+  border-radius: 0 4px 4px 0;
+  opacity: 0;
+  transition: all 0.6s ease;
+}
+
+.book-item:hover .book-spine {
+  opacity: 1;
+  transform: rotateY(-75deg) translateZ(8px);
+}
+
+/* Removed special hover animations */
+
+/* 🎨 GRADIENT OVERLAYS FOR VISUAL DEPTH - BEHIND BOOKS */
+.book-gallery-container::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 200px;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.9) 0%,
+    rgba(255, 255, 255, 0.5) 50%,
+    transparent 100%
+  );
+  z-index: 1;
+  pointer-events: none !important;
+}
+
+.book-gallery-container::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 200px;
+  height: 100%;
+  background: linear-gradient(
+    270deg,
+    rgba(255, 255, 255, 0.9) 0%,
+    rgba(255, 255, 255, 0.5) 50%,
+    transparent 100%
+  );
+  z-index: 1;
+  pointer-events: none !important;
+}
+
+/* 📱 RESPONSIVE DESIGN */
+@media (max-width: 1024px) {
+  .book-gallery-container {
+    height: 250px;
+  }
+  
+  .book-item {
+    width: 140px;
+    height: 210px;
+  }
+  
+  @keyframes infiniteScroll {
+    0% { transform: translateX(100vw) translateZ(0); }
+    100% { transform: translateX(-150vw) translateZ(0); }
+  }
+}
+
+@media (max-width: 768px) {
+  .book-gallery-container {
+    height: 220px;
+  }
+  
+  .book-item {
+    width: 120px;
+    height: 180px;
+  }
+  
+  .book-item:hover {
+    transform: 
+      translateY(-20px) 
+      translateZ(30px) 
+      rotateY(10deg) 
+      scale(1.1);
+  }
+}
+
+@media (max-width: 480px) {
+  .book-gallery-container {
+    height: 200px;
+  }
+  
+  .book-item {
+    width: 100px;
+    height: 150px;
+  }
+  
+  .book-gallery-track {
+    gap: var(--spacing-sm);
+  }
+}
+
 .new-arrivals::before {
   content: '';
   position: absolute;
@@ -16,6 +259,7 @@
   bottom: 0;
   background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="books" width="50" height="50" patternUnits="userSpaceOnUse"><path d="M10,10 L40,10 L40,40 L10,40 Z" fill="none" stroke="%23e0e7ff" stroke-width="0.5" opacity="0.3"/><path d="M15,15 L35,15" stroke="%23e0e7ff" stroke-width="0.3" opacity="0.5"/><path d="M15,20 L30,20" stroke="%23e0e7ff" stroke-width="0.3" opacity="0.5"/><path d="M15,25 L32,25" stroke="%23e0e7ff" stroke-width="0.3" opacity="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23books)"/></svg>');
   z-index: 1;
+  pointer-events: none;
 }
 
 /* Section Header */
