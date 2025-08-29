@@ -268,6 +268,7 @@
   margin-bottom: var(--spacing-md);
   position: relative;
   z-index: 2;
+  display: none;
 }
 
 .na-heading h3 {
