@@ -277,37 +277,15 @@
   animation-delay: 0.8s;
 }
 
-/* Specific Icon Colors for Different Services */
-.quick-link-box:nth-child(1) .quick-link-icon {
-  background: linear-gradient(135deg, #4f46e5, #7c3aed);
+/* Consistent Icon Background - Soft and elegant */
+.quick-link-icon {
+  background: linear-gradient(135deg, rgba(45, 53, 97, 0.1) 0%, rgba(27, 161, 161, 0.1) 100%) !important;
+  border: 2px solid rgba(45, 53, 97, 0.2);
+  backdrop-filter: blur(10px);
 }
 
-.quick-link-box:nth-child(2) .quick-link-icon {
-  background: linear-gradient(135deg, #059669, #10b981);
-}
-
-.quick-link-box:nth-child(3) .quick-link-icon {
-  background: linear-gradient(135deg, #dc2626, #ef4444);
-}
-
-.quick-link-box:nth-child(4) .quick-link-icon {
-  background: linear-gradient(135deg, #7c2d12, #ea580c);
-}
-
-.quick-link-box:nth-child(5) .quick-link-icon {
-  background: linear-gradient(135deg, #1e40af, #3b82f6);
-}
-
-.quick-link-box:nth-child(6) .quick-link-icon {
-  background: linear-gradient(135deg, #be185d, #ec4899);
-}
-
-.quick-link-box:nth-child(7) .quick-link-icon {
-  background: linear-gradient(135deg, #0891b2, #06b6d4);
-}
-
-.quick-link-box:nth-child(8) .quick-link-icon {
-  background: linear-gradient(135deg, #65a30d, #84cc16);
+.quick-link-icon i {
+  color: var(--primary-navy) !important;
 }
 
 /* Hover Effects for Specific Icons */
