@@ -243,5 +243,24 @@
 .faculty-publications-box .box-header,
 .theses-box .box-header,
 .research-outputs-box .box-header {
-  background: var(--gradient-accent) !important; /* All boxes use website's orange-to-yellow gradient */
+  background: var(--gradient-primary) !important; /* Navy-to-teal gradient matching website theme */
+  color: var(--white) !important; /* White text for readability */
+}
+
+/* Ensure heading text is clearly readable */
+.library-services-box .box-header h3,
+.research-tools-box .box-header h3,
+.electronic-resources-box .box-header h3,
+.quick-links-box .box-header h3,
+.opening-hours-box .box-header h3,
+.picture-gallery-box .box-header h3,
+.krc-facilities-box .box-header h3,
+.news-announcements-box .box-header h3,
+.events-box .box-header h3,
+.faculty-publications-box .box-header h3,
+.theses-box .box-header h3,
+.research-outputs-box .box-header h3 {
+  color: #ffffff !important; /* Bright white heading text */
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3) !important; /* Text shadow for better visibility */
+  font-weight: 600 !important; /* Make text bolder */
 }
