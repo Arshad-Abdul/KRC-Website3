@@ -193,17 +193,17 @@
   color: var(--primary-teal);
 }
 
-/* Individual Box Colors */
+/* Individual Box Colors - Orange theme variations */
 .library-services-box .box-header {
-  background: linear-gradient(135deg, #4f46e5, #7c3aed);
+  background: var(--gradient-accent); /* Orange to Yellow */
 }
 
 .research-tools-box .box-header {
-  background: linear-gradient(135deg, #059669, #10b981);
+  background: linear-gradient(135deg, var(--accent-orange), #ff8c42); /* Orange variations */
 }
 
 .electronic-resources-box .box-header {
-  background: linear-gradient(135deg, #dc2626, #ef4444);
+  background: linear-gradient(135deg, #ff8c42, var(--accent-yellow)); /* Orange to Yellow blend */
 }
 
 /* Responsive Design */
