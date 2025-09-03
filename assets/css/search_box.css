@@ -185,8 +185,7 @@
 
 /* Search Forms Container */
 .search-forms {
- 
-  margin: 0 auto var(--spacing-xl);
+  margin: var(--spacing-sm) auto var(--spacing-xl);
   padding: 0 var(--spacing-md);
   position: relative;
   min-height: 120px; /* Consistent height to prevent jumping */
@@ -395,7 +394,7 @@
   font-size: var(--font-size-sm);
   font-weight: 500;
   cursor: pointer;
-  transition: all var(--transition-fast);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
   overflow: hidden;
   display: flex;
@@ -433,7 +432,7 @@
   width: 0;
   height: 100%;
   background: var(--gradient-primary);
-  transition: width var(--transition-normal);
+  transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   z-index: -1;
 }
 
@@ -522,6 +521,7 @@
   .search-forms {
     padding: 0 var(--spacing-sm);
     min-height: 140px;
+    margin-top: var(--spacing-xs) !important;
   }
   
   .search-form {
@@ -584,7 +584,7 @@
     grid-template-columns: 1fr 1fr;
     gap: var(--spacing-md);
     padding: 0 var(--spacing-md);
-    margin-top: 1.5rem;
+    margin-top: var(--spacing-sm);
     max-width: 600px;
     margin-left: auto;
     margin-right: auto;
@@ -612,6 +612,7 @@
   .search-forms {
     padding: 0 var(--spacing-xs);
     min-height: 180px; /* More height for stacked elements */
+    margin-top: 0 !important;
   }
   
   .search-form {
@@ -669,7 +670,7 @@
     grid-template-columns: 1fr 1fr;
     gap: var(--spacing-sm);
     padding: 0 var(--spacing-sm);
-    margin-top: 1.5rem;
+    margin-top: var(--spacing-xs);
     max-width: 400px;
   }
   
@@ -682,19 +683,22 @@
   }
 }
 
-/* Advanced Search Button Special Styling */
+/* Advanced Search Button - Distinct Orange Styling */
 #advancedBtn {
-  background: var(--gradient-accent) !important;
+  background: linear-gradient(135deg, var(--accent-orange) 0%, var(--accent-yellow) 100%) !important;
   color: var(--white) !important;
-  border-color: var(--accent-orange) !important;
+  border: 2px solid var(--accent-orange) !important;
+  font-weight: 600 !important;
 }
 
 #advancedBtn::before {
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent) !important;
+  background: linear-gradient(135deg, var(--accent-yellow) 0%, var(--accent-orange) 100%) !important;
 }
 
 #advancedBtn:hover {
   background: linear-gradient(135deg, var(--accent-yellow) 0%, var(--accent-orange) 100%) !important;
+  transform: translateY(-2px) !important;
+  box-shadow: var(--shadow-lg) !important;
 }
 
 /* Loading State */
@@ -747,86 +751,7 @@
   box-shadow: 0 0 0 3px rgba(220, 53, 69, 0.1);
 }
 
-/* Color-coded search type indicators */
-.search-toggle-buttons button[data-search-type="books"],
-.search-toggle-btn[data-target="kohaForm"] {
-  border-color: #2c5aa0;
-  color: #2c5aa0;
-}
-
-.search-toggle-buttons button[data-search-type="books"].active,
-.search-toggle-buttons button[data-search-type="books"]:hover,
-.search-toggle-btn[data-target="kohaForm"].active,
-.search-toggle-btn[data-target="kohaForm"]:hover {
-  background: #2c5aa0;
-  color: white;
-}
-
-.search-toggle-buttons button[data-search-type="books"]::before,
-.search-toggle-btn[data-target="kohaForm"]::before {
-  background: #2c5aa0;
-}
-
-.search-toggle-buttons button[data-search-type="digital"],
-.search-toggle-btn[data-target="summonsForm"] {
-  border-color: #e74c3c;
-  color: #e74c3c;
-}
-
-.search-toggle-buttons button[data-search-type="digital"].active,
-.search-toggle-buttons button[data-search-type="digital"]:hover,
-.search-toggle-btn[data-target="summonsForm"].active,
-.search-toggle-btn[data-target="summonsForm"]:hover {
-  background: #e74c3c;
-  color: white;
-}
-
-.search-toggle-buttons button[data-search-type="digital"]::before,
-.search-toggle-btn[data-target="summonsForm"]::before {
-  background: #e74c3c;
-}
-
-.search-toggle-buttons button[data-search-type="repository"],
-.search-toggle-btn[data-target="dspaceForm"] {
-  border-color: #8e44ad;
-  color: #8e44ad;
-}
-
-.search-toggle-buttons button[data-search-type="repository"].active,
-.search-toggle-buttons button[data-search-type="repository"]:hover,
-.search-toggle-btn[data-target="dspaceForm"].active,
-.search-toggle-btn[data-target="dspaceForm"]:hover {
-  background: #8e44ad;
-  color: white;
-}
-
-.search-toggle-buttons button[data-search-type="repository"]::before,
-.search-toggle-btn[data-target="dspaceForm"]::before {
-  background: #8e44ad;
-}
-
-.search-toggle-buttons button[data-search-type="advanced"],
-.search-toggle-btn[data-search-type="advanced"],
-#advancedBtn {
-  border-color: #f39c12;
-  color: #f39c12;
-}
-
-.search-toggle-buttons button[data-search-type="advanced"].active,
-.search-toggle-buttons button[data-search-type="advanced"]:hover,
-.search-toggle-btn[data-search-type="advanced"].active,
-.search-toggle-btn[data-search-type="advanced"]:hover,
-#advancedBtn.active,
-#advancedBtn:hover {
-  background: #f39c12;
-  color: white;
-}
-
-.search-toggle-buttons button[data-search-type="advanced"]::before,
-.search-toggle-btn[data-search-type="advanced"]::before,
-#advancedBtn::before {
-  background: #f39c12;
-}
+/* Consistent library theme for all toggle buttons */
 
 /* ========================================
    INDIVIDUAL SEARCH FORM SELECTORS
