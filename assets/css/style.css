@@ -235,6 +235,37 @@ section {
   }
 }
 
+/* Aggressive Mobile Section Spacing Optimizations */
+@media (max-width: 768px) {
+  .quick-links-section,
+  .library-resources-section,
+  .stats-section,
+  .content-boxes-section,
+  .new-arrivals,
+  .search-toggle-section,
+  .search-header-section {
+    padding-top: var(--spacing-sm) !important;
+    padding-bottom: var(--spacing-sm) !important;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .quick-links-section,
+  .library-resources-section, 
+  .stats-section,
+  .content-boxes-section,
+  .new-arrivals,
+  .search-toggle-section,
+  .search-header-section {
+    padding-top: var(--spacing-xs) !important;
+    padding-bottom: var(--spacing-xs) !important;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+  }
+}
+
 /* Print Styles */
 @media print {
   * {

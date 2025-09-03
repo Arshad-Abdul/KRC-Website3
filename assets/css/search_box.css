@@ -606,7 +606,7 @@
 /* Mobile phones */
 @media (max-width: 480px) {
   .search-toggle-section {
-    padding: var(--spacing-lg) 0;
+    padding: var(--spacing-xs) 0 !important;
   }
   
   .search-forms {

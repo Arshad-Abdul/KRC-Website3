@@ -193,17 +193,20 @@
   color: var(--primary-teal);
 }
 
-/* Individual Box Colors - Orange theme variations */
-.library-services-box .box-header {
-  background: var(--gradient-accent); /* Orange to Yellow */
-}
-
-.research-tools-box .box-header {
-  background: linear-gradient(135deg, var(--accent-orange), #ff8c42); /* Orange variations */
-}
-
+/* Unified Teal Color for All Library Resource Box Headers */
+.library-services-box .box-header,
+.research-tools-box .box-header,
 .electronic-resources-box .box-header {
-  background: linear-gradient(135deg, #ff8c42, var(--accent-yellow)); /* Orange to Yellow blend */
+  background: linear-gradient(135deg, #1ba1a1 0%, #1ba1a1 100%) !important;
+  color: var(--white) !important;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Smooth gradient orange hover effect for library resource box headers */
+.library-services-box:hover .box-header,
+.research-tools-box:hover .box-header,
+.electronic-resources-box:hover .box-header {
+  background: linear-gradient(135deg, var(--accent-orange) 0%, var(--accent-yellow) 100%) !important;
 }
 
 /* Responsive Design */
