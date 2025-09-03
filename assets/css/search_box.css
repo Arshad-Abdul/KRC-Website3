@@ -4,6 +4,8 @@
 .search-header-section {
   background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
   padding: var(--spacing-md) 0;
+  margin-top: 0;
+  margin-bottom: 0;
   text-align: center;
   color: white;
 }
@@ -23,6 +25,18 @@
   
   #search {
     display: block !important;
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+  }
+  
+  .search-header-section {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+  }
+  
+  /* Ensure the search section immediately follows hero with no gap */
+  .hero + .search-header-section {
+    margin-top: 0 !important;
   }
 }
 
@@ -37,6 +51,20 @@
   font-weight: 700;
   margin-bottom: var(--spacing-xs);
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  position: relative;
+  display: inline-block;
+}
+
+.search-main-heading::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 4px;
+  background: var(--gradient-accent);
+  border-radius: 2px;
 }
 
 .search-description {
@@ -554,17 +582,24 @@
   .search-form-buttons {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: var(--spacing-sm);
-    padding: 0 var(--spacing-sm);
+    gap: var(--spacing-md);
+    padding: 0 var(--spacing-md);
     margin-top: 1.5rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
   }
   
   .search-toggle-buttons button,
   .search-toggle-btn {
     min-width: auto;
-    min-height: 36px;
-    padding: var(--spacing-sm);
-    font-size: var(--font-size-xs);
+    min-height: 48px;
+    padding: var(--spacing-sm) var(--spacing-md);
+    font-size: var(--font-size-sm);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-weight: 600;
   }
 }
 
@@ -631,17 +666,19 @@
   
   .search-toggle-buttons,
   .search-form-buttons {
-    grid-template-columns: 1fr;
-    gap: var(--spacing-xs);
-    padding: 0 var(--spacing-xs);
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-sm);
+    padding: 0 var(--spacing-sm);
     margin-top: 1.5rem;
+    max-width: 400px;
   }
   
   .search-toggle-buttons button,
   .search-toggle-btn {
-    padding: var(--spacing-sm);
+    padding: var(--spacing-xs) var(--spacing-sm);
     min-height: 44px;
-    font-size: var(--font-size-sm);
+    font-size: var(--font-size-xs);
+    font-weight: 600;
   }
 }
 

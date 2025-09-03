@@ -101,7 +101,7 @@
             <li class="dropdown">
               <span>About us <i class="fa-solid fa-caret-down"></i></span>
                <ul class="dropdown-menu">
-                <li><a href="#"><i class="ri-stack-fill"></i>&ThickSpace;KRC Team</a></li>
+                <li><a href="krc-staff.html"><i class="ri-stack-fill"></i>&ThickSpace;KRC Team</a></li>
                 <li><a href="#"><i class="ri-book-read-fill"></i>&ThickSpace;Library Committee</a></li>
                 <li><a href="#"><i class="ri-database-line"></i>&ThickSpace;KRC Alumni</a></li>
                
@@ -166,7 +166,7 @@
               <i class="fa-solid fa-caret-down"></i>
             </a>
             <ul class="mobile-submenu" id="about">
-              <li><a href="#"><i class="ri-stack-fill"></i>KRC Team</a></li>
+              <li><a href="krc-staff.html"><i class="ri-stack-fill"></i>KRC Team</a></li>
               <li><a href="#"><i class="ri-book-read-fill"></i>Library Committee</a></li>
               <li><a href="#"><i class="ri-database-line"></i>KRC Alumni</a></li>
             </ul>
@@ -375,7 +375,6 @@
   <section class="search-header-section">
     <div class="search-header-container">
       <h2 class="search-main-heading">Search Our Resources</h2>
-      <p class="search-description">Access our comprehensive collection through multiple search platforms</p>
     </div>
   </section>
 
@@ -1426,36 +1425,94 @@
     console.log("Button is clicked");
   });
 
-  // Toggle functionality for new search buttons (with data-target)
-  const searchToggleBtns = document.querySelectorAll('.search-toggle-btn');
-  
-  searchToggleBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-      const targetFormId = btn.getAttribute('data-target');
-      const searchType = btn.getAttribute('data-search-type');
-      
-      // Handle advanced search button
-      if (searchType === 'advanced' || btn.id === 'advancedBtn') {
-        window.open('https://iith.summon.serialssolutions.com/#!/advanced', '_blank');
-        console.log("Advanced search button clicked");
-        return;
-      }
-      
-      const targetForm = document.getElementById(targetFormId);
-      
-      if (targetForm) {
-        // Remove active class from all buttons and forms
-        searchToggleBtns.forEach(button => button.classList.remove('active'));
-        document.querySelectorAll('.search-form').forEach(form => form.classList.remove('active'));
+  // Unified search toggle functionality for both desktop and mobile
+  function initializeSearchToggle() {
+    // Handle large screen search buttons (with data-target)
+    const desktopSearchBtns = document.querySelectorAll('.search-toggle-btn');
+    
+    desktopSearchBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const targetFormId = btn.getAttribute('data-target');
+        const searchType = btn.getAttribute('data-search-type');
         
-        // Add active class to clicked button and target form
-        btn.classList.add('active');
-        targetForm.classList.add('active');
+        // Handle advanced search button
+        if (searchType === 'advanced' || btn.id === 'advancedBtn') {
+          window.open('https://iith.summon.serialssolutions.com/#!/advanced', '_blank');
+          console.log("Advanced search button clicked (desktop)");
+          return;
+        }
         
-        console.log('Switched to form:', targetFormId);
-      }
+        const targetForm = document.getElementById(targetFormId);
+        
+        if (targetForm) {
+          // Remove active class from all buttons and forms
+          desktopSearchBtns.forEach(button => button.classList.remove('active'));
+          document.querySelectorAll('.search-form').forEach(form => form.classList.remove('active'));
+          
+          // Add active class to clicked button and target form
+          btn.classList.add('active');
+          targetForm.classList.add('active');
+          
+          console.log('Switched to form (desktop):', targetFormId);
+        }
+      });
     });
-  });
+    
+    // Handle mobile search buttons (with different IDs and data-search-type)
+    const mobileSearchBtns = document.querySelectorAll('#search .search-toggle-buttons button');
+    
+    mobileSearchBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const searchType = btn.getAttribute('data-search-type');
+        
+        // Handle advanced search button
+        if (searchType === 'advanced' || btn.id === 'advancedBtn') {
+          window.open('https://iith.summon.serialssolutions.com/#!/advanced', '_blank');
+          console.log("Advanced search button clicked (mobile)");
+          return;
+        }
+        
+        // Map search types to form IDs
+        let targetFormId;
+        switch (searchType) {
+          case 'books':
+            targetFormId = 'kohaForm';
+            break;
+          case 'digital':
+            targetFormId = 'summonsForm';
+            break;
+          case 'repository':
+            targetFormId = 'dspaceForm';
+            break;
+          default:
+            console.log('Unknown search type:', searchType);
+            return;
+        }
+        
+        // Find the target form in the mobile section
+        const targetForm = document.querySelector(`#search #${targetFormId}`);
+        
+        if (targetForm) {
+          // Remove active class from all mobile buttons and forms
+          mobileSearchBtns.forEach(button => button.classList.remove('active'));
+          document.querySelectorAll('#search .search-form').forEach(form => form.classList.remove('active'));
+          
+          // Add active class to clicked button and target form
+          btn.classList.add('active');
+          targetForm.classList.add('active');
+          
+          console.log('Switched to form (mobile):', targetFormId);
+        } else {
+          console.log('Target form not found:', targetFormId);
+        }
+      });
+    });
+    
+    console.log('Search toggle initialized for both desktop and mobile');
+  }
+  
+  // Initialize search toggle functionality
+  initializeSearchToggle();
 
   // Debug carousel initialization
   console.log('Checking for carousel...');

@@ -3,8 +3,36 @@
 .hero {
   position: relative;
   margin-top: 0;
+  margin-bottom: 0;
   /* background: var(--gradient-primary); */
   overflow: hidden;
+}
+
+/* Remove any gaps around hero section on smaller screens */
+@media (max-width: 1023px) {
+  .hero {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+  }
+  
+  .modern-carousel {
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+  }
+  
+  /* Remove any spacing from elements after hero */
+  .hero + * {
+    margin-top: 0 !important;
+  }
+  
+  /* Specifically target the search section that follows */
+  .hero + .search-header-section,
+  .hero + section {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+  }
 }
 
 /* On large screens, hero should contain the overlaid search */
@@ -16,17 +44,32 @@
   
   /* Hide navigation buttons when search is overlaid */
   .mc-btn {
-    display: none;
+    display: none !important;
   }
   
   /* Hide dots navigation when search is overlaid */
   .mc-dots {
-    display: none;
+    display: none !important;
   }
   
   /* Hide card content (text overlay) when search is overlaid */
   .mc-card-body {
-    display: none;
+    display: none !important;
+  }
+}
+
+/* Ensure navigation is visible on smaller screens */
+@media (max-width: 1023px) {
+  .mc-btn {
+    display: flex !important;
+  }
+  
+  .mc-dots {
+    display: none !important;
+  }
+  
+  .mc-card-body {
+    display: block !important;
   }
 }
 
