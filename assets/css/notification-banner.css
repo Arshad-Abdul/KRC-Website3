@@ -1,0 +1,205 @@
+/* ===== NOTIFICATION BANNER STYLES ===== */
+
+.notification-banner {
+  background: linear-gradient(135deg, var(--primary-navy) 0%, var(--primary-teal) 100%);
+  color: var(--white);
+  padding: var(--spacing-sm) 0;
+  position: relative;
+  z-index: 1000;
+  box-shadow: var(--shadow-sm);
+  border-bottom: 2px solid var(--accent-orange);
+  overflow: hidden;
+}
+
+.notification-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-lg);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--spacing-md);
+}
+
+.notification-content {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  flex: 1;
+  overflow: hidden;
+}
+
+.notification-icon {
+  font-size: 1.2rem;
+  color: var(--accent-orange);
+  animation: pulse 2s infinite;
+  flex-shrink: 0;
+}
+
+.notification-text {
+  position: relative;
+  height: 1.5rem;
+  overflow: hidden;
+  flex: 1;
+}
+
+.notification-item {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  white-space: nowrap;
+  opacity: 0;
+  transform: translateY(100%);
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  font-size: var(--font-size-sm);
+  font-weight: 500;
+  animation: scrollText 20s linear infinite;
+}
+
+.notification-item.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.notification-close {
+  background: rgba(255, 255, 255, 0.2) !important;
+  border: 2px solid rgba(255, 255, 255, 0.4) !important;
+  color: var(--white) !important;
+  padding: var(--spacing-xs) !important;
+  border-radius: var(--radius-md) !important;
+  cursor: pointer !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 32px !important;
+  height: 32px !important;
+  transition: all 0.3s ease !important;
+  flex-shrink: 0 !important;
+  position: relative !important;
+  z-index: 1000 !important;
+  pointer-events: auto !important;
+  user-select: none !important;
+  -webkit-user-select: none !important;
+}
+
+.notification-close:hover {
+  background: var(--accent-orange);
+  border-color: var(--accent-orange);
+  transform: scale(1.1);
+}
+
+.notification-close:focus {
+  outline: 2px solid var(--white);
+  outline-offset: 2px;
+}
+
+/* Animations */
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.8;
+  }
+}
+
+@keyframes scrollText {
+  0% {
+    transform: translateX(100%);
+  }
+  10%, 90% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+/* Hidden state */
+.notification-banner.hidden {
+  display: none;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .notification-banner {
+    padding: var(--spacing-xs) 0;
+  }
+  
+  .notification-container {
+    padding: 0 var(--spacing-md);
+    gap: var(--spacing-sm);
+  }
+  
+  .notification-content {
+    gap: var(--spacing-sm);
+  }
+  
+  .notification-icon {
+    font-size: 1rem;
+  }
+  
+  .notification-item {
+    font-size: 0.85rem;
+  }
+  
+  .notification-close {
+    width: 28px;
+    height: 28px;
+  }
+}
+
+@media (max-width: 480px) {
+  .notification-container {
+    padding: 0 var(--spacing-sm);
+  }
+  
+  .notification-item {
+    font-size: 0.8rem;
+    animation: scrollText 25s linear infinite; /* Slower on mobile */
+  }
+  
+  .notification-text {
+    height: 1.3rem;
+  }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .notification-banner {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+  }
+  
+  .notification-close {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.25);
+  }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .notification-item {
+    animation: none;
+  }
+  
+  .notification-icon {
+    animation: none;
+  }
+  
+  .notification-item.active {
+    position: static;
+    opacity: 1;
+    transform: none;
+    white-space: normal;
+    word-wrap: break-word;
+  }
+}
+
+/* Focus management */
+.notification-banner:focus-within {
+  outline: 2px solid var(--accent-orange);
+  outline-offset: 2px;
+}

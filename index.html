@@ -28,6 +28,7 @@
   <link rel="stylesheet" href="assets/css/library-resources.css" />
   <link rel="stylesheet" href="assets/css/footer2.css" />
   <link rel="stylesheet" href="assets/css/accessibility-toolkit.css" />
+  <link rel="stylesheet" href="assets/css/notification-banner.css" />
   
   <!-- Icon Libraries -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" />
@@ -179,6 +180,25 @@
       </div>
     </div>
   </header>
+
+  <!-- Notification Banner -->
+  <div class="notification-banner" id="notificationBanner">
+    <div class="notification-container">
+      <div class="notification-content">
+        <i class="fas fa-bullhorn notification-icon"></i>
+        <div class="notification-text">
+          <span class="notification-item active">📚 New Digital Collection: 50,000+ E-books now available in Engineering & Sciences</span>
+          <span class="notification-item">⏰ Extended Hours: KRC now open until 10 PM on weekdays during exam season</span>
+          <span class="notification-item">🎓 Research Workshop: "Advanced Database Search Techniques" - Register by Friday</span>
+          <span class="notification-item">📖 New Arrival: Latest IEEE & ACM digital libraries added to our collection</span>
+          <span class="notification-item">💻 System Update: OPAC will be offline for maintenance on Sunday 2-4 AM</span>
+        </div>
+      </div>
+      <button class="notification-close" aria-label="Close notification">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+  </div>
 
   <!-- Hero with modern carousel -->
   <section class="hero" id="main-content">
@@ -1630,6 +1650,7 @@ function googleTranslateElementInit() {
 </script>
 <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 <script src="./assets/js/accessibility-toolkit.js"></script>
+<script src="./assets/js/notification-banner.js"></script>
 
 </body>
 </html>
