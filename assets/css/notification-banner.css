@@ -54,12 +54,22 @@
   transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
   font-size: var(--font-size-sm);
   font-weight: 500;
-  animation: scrollText 20s linear infinite;
+  animation: none; /* No animation by default */
 }
 
 .notification-item.active {
   opacity: 1;
   transform: translateY(0);
+  animation: scrollText 20s linear infinite; /* Only active item has desktop animation */
+}
+
+/* Pause animation on hover - for all screen sizes */
+.notification-banner:hover .notification-item {
+  animation-play-state: paused !important;
+}
+
+.notification-banner:hover .notification-item.active {
+  animation-play-state: paused !important;
 }
 
 .notification-close {
@@ -110,11 +120,14 @@
   0% {
     transform: translateX(100%);
   }
-  10%, 90% {
+  20% {
+    transform: translateX(0);
+  }
+  80% {
     transform: translateX(0);
   }
   100% {
-    transform: translateX(-100%);
+    transform: translateX(-120%);
   }
 }
 
@@ -199,6 +212,16 @@
   }
 }
 
+/* Mobile animation - direct right to left scroll */
+@keyframes mobileScrollText {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-120%);
+  }
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
   .notification-banner {
@@ -220,6 +243,11 @@
   
   .notification-item {
     font-size: 0.85rem;
+    animation: none; /* No animation by default on mobile */
+  }
+  
+  .notification-item.active {
+    animation: mobileScrollText 25s linear infinite; /* Only active item has mobile animation */
   }
   
   .notification-close {
@@ -235,7 +263,11 @@
   
   .notification-item {
     font-size: 0.8rem;
-    animation: scrollText 25s linear infinite; /* Slower on mobile */
+    animation: none; /* No animation by default */
+  }
+  
+  .notification-item.active {
+    animation: mobileScrollText 30s linear infinite; /* Even slower for very small screens */
   }
   
   .notification-text {

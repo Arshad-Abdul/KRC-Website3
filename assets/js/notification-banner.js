@@ -13,7 +13,7 @@ class NotificationBanner {
     this.currentIndex = 0;
     this.interval = null;
     this.isPaused = false;
-    this.rotationSpeed = 4000; // 4 seconds per item
+    this.rotationSpeed = this.getRotationSpeed(); // Dynamic speed based on screen size
     
     this.init();
   }
@@ -101,6 +101,11 @@ class NotificationBanner {
       } else {
         this.resumeRotation();
       }
+    });
+    
+    // Window resize (update rotation speed for responsive)
+    window.addEventListener('resize', () => {
+      this.updateRotationSpeed();
     });
   }
   
@@ -220,6 +225,28 @@ class NotificationBanner {
     }, 1000);
   }
   
+  getRotationSpeed() {
+    // Match CSS animation speeds
+    if (window.innerWidth <= 480) {
+      return 30000; // 30s for very small screens
+    } else if (window.innerWidth <= 768) {
+      return 25000; // 25s for mobile
+    } else {
+      return 20000; // 20s for desktop
+    }
+  }
+  
+  updateRotationSpeed() {
+    const newSpeed = this.getRotationSpeed();
+    if (newSpeed !== this.rotationSpeed) {
+      this.rotationSpeed = newSpeed;
+      if (this.interval) {
+        this.stopRotation();
+        this.startRotation();
+      }
+    }
+  }
+
   // Public methods for external control
   showBanner() {
     console.log('Showing banner'); // Debug log
@@ -257,6 +284,15 @@ class NotificationBanner {
     this.rotationSpeed = speed;
     this.stopRotation();
     this.startRotation();
+  }
+  
+  // Update rotation to be responsive on initialization
+  updateRotationForScreenSize() {
+    this.rotationSpeed = this.getRotationSpeed();
+    if (this.interval) {
+      this.stopRotation();
+      this.startRotation();
+    }
   }
 }
 
