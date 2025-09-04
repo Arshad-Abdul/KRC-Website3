@@ -8,6 +8,8 @@ class NotificationBanner {
     this.banner = document.getElementById('notificationBanner');
     this.items = document.querySelectorAll('.notification-item');
     this.closeBtn = this.banner ? this.banner.querySelector('.notification-close') : null;
+    this.toggleContainer = document.getElementById('notificationToggle');
+    this.showBtn = this.toggleContainer ? this.toggleContainer.querySelector('.notification-show-btn') : null;
     this.currentIndex = 0;
     this.interval = null;
     this.isPaused = false;
@@ -69,6 +71,16 @@ class NotificationBanner {
       });
     } else {
       console.error('Close button not found! Check HTML structure.');
+    }
+    
+    // Show button
+    if (this.showBtn) {
+      this.showBtn.addEventListener('click', (e) => {
+        console.log('Show button clicked');
+        e.preventDefault();
+        e.stopPropagation();
+        this.showBanner();
+      });
     }
     
     // Pause on hover
@@ -152,11 +164,16 @@ class NotificationBanner {
     this.stopRotation();
     this.banner.classList.add('hidden');
     
+    // Show the toggle button
+    if (this.toggleContainer) {
+      this.toggleContainer.classList.add('show');
+    }
+    
     // Remember user preference (but don't auto-clear it anymore)
     localStorage.setItem('krc-notification-closed', 'true');
     
     // Announce closure to screen readers
-    this.announceToScreenReader('Notification banner closed');
+    this.announceToScreenReader('Notification banner closed. Use the notification button to show it again.');
   }
   
   handleKeydown(e) {
@@ -205,9 +222,20 @@ class NotificationBanner {
   
   // Public methods for external control
   showBanner() {
+    console.log('Showing banner'); // Debug log
     this.banner.classList.remove('hidden');
+    
+    // Hide the toggle button
+    if (this.toggleContainer) {
+      this.toggleContainer.classList.remove('show');
+    }
+    
+    // Clear closed state and restart rotation
     localStorage.removeItem('krc-notification-closed');
     this.startRotation();
+    
+    // Announce to screen readers
+    this.announceToScreenReader('Notification banner restored');
   }
   
   addNotification(text) {

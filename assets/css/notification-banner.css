@@ -123,6 +123,82 @@
   display: none;
 }
 
+/* Show Notifications Toggle Button */
+.notification-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1001;
+  display: none; /* Hidden by default */
+}
+
+.notification-toggle.show {
+  display: block;
+  animation: slideInFromRight 0.3s ease-out;
+}
+
+.notification-show-btn {
+  background: linear-gradient(135deg, var(--primary-navy) 0%, var(--primary-teal) 100%);
+  border: 2px solid var(--accent-orange);
+  color: var(--white);
+  padding: var(--spacing-sm);
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  transition: all 0.3s ease;
+  position: relative;
+  box-shadow: var(--shadow-lg);
+}
+
+.notification-show-btn:hover {
+  background: linear-gradient(135deg, var(--accent-orange) 0%, var(--accent-yellow) 100%);
+  transform: scale(1.1);
+  box-shadow: 0 8px 25px rgba(218, 165, 32, 0.4);
+}
+
+.notification-show-btn:focus {
+  outline: 2px solid var(--white);
+  outline-offset: 3px;
+}
+
+.notification-show-btn i {
+  font-size: 1.2rem;
+}
+
+.notification-badge {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background: var(--accent-orange);
+  color: var(--white);
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 2px 6px;
+  border-radius: 10px;
+  min-width: 18px;
+  height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--white);
+}
+
+/* Animations */
+@keyframes slideInFromRight {
+  0% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
   .notification-banner {
@@ -164,6 +240,29 @@
   
   .notification-text {
     height: 1.3rem;
+  }
+  
+  .notification-toggle {
+    top: 15px;
+    right: 15px;
+  }
+  
+  .notification-show-btn {
+    width: 42px;
+    height: 42px;
+    padding: var(--spacing-xs);
+  }
+  
+  .notification-show-btn i {
+    font-size: 1rem;
+  }
+  
+  .notification-badge {
+    top: -6px;
+    right: -6px;
+    font-size: 0.7rem;
+    min-width: 16px;
+    height: 16px;
   }
 }
 
