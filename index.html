@@ -29,6 +29,7 @@
   <link rel="stylesheet" href="assets/css/footer2.css" />
   <link rel="stylesheet" href="assets/css/accessibility-toolkit.css" />
   <link rel="stylesheet" href="assets/css/notification-banner.css" />
+  <link rel="stylesheet" href="assets/css/scroll-to-top.css" />
   
   <!-- Icon Libraries -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" />
@@ -188,7 +189,7 @@
         <i class="fas fa-bullhorn notification-icon"></i>
         <div class="notification-text">
           <span class="notification-item active">📚 New Digital Collection: 50,000+ E-books now available in Engineering & Sciences - <a href="#" style="color: var(--accent-orange); text-decoration: underline;">Explore Collection</a></span>
-          <span class="notification-item">⏰ Extended Hours: KRC now open until 10 PM on weekdays during exam season - <a href="#" style="color: var(--accent-orange); text-decoration: underline;">View Schedule</a></span>
+          <span class="notification-item">⏰ Extended Hours: KRC now open until 10 PM on weekdays during exam season - <a href="#" stylegi="color: var(--accent-orange); text-decoration: underline;">View Schedule</a></span>
           <span class="notification-item">🎓 Research Workshop: "Advanced Database Search Techniques" - Register by Friday - <a href="#" style="color: var(--accent-orange); text-decoration: underline;">Register Now</a></span>
           <span class="notification-item">📖 New Arrival: Latest IEEE & ACM digital libraries added to our collection - <a href="#" style="color: var(--accent-orange); text-decoration: underline;">Access Now</a></span>
           <span class="notification-item">💻 System Update: OPAC will be offline for maintenance on Sunday 2-4 AM this is extra data to check the responsiveness of the notification banner - <a href="#" style="color: var(--accent-orange); text-decoration: underline;">More Info</a></span>
@@ -205,6 +206,13 @@
     <button class="notification-show-btn" aria-label="Show notifications" title="Show Library Notifications">
       <i class="fas fa-bell"></i>
       <span class="notification-badge">5</span>
+    </button>
+  </div>
+
+  <!-- Scroll to Top Button -->
+  <div class="scroll-to-top" id="scrollToTop">
+    <button class="scroll-btn" aria-label="Scroll to top" title="Back to Top">
+      <i class="fas fa-chevron-up"></i>
     </button>
   </div>
 
@@ -1659,6 +1667,7 @@ function googleTranslateElementInit() {
 <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 <script src="./assets/js/accessibility-toolkit.js"></script>
 <script src="./assets/js/notification-banner.js"></script>
+<script src="./assets/js/scroll-to-top.js"></script>
 
 </body>
 </html>

@@ -1,0 +1,198 @@
+/* ===== SCROLL TO TOP BUTTON STYLES ===== */
+
+.scroll-to-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  pointer-events: none;
+}
+
+.scroll-to-top.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.scroll-btn {
+  background: linear-gradient(135deg, var(--primary-navy) 0%, var(--primary-teal) 100%);
+  border: 2px solid var(--accent-orange);
+  color: var(--white);
+  padding: var(--spacing-md);
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  box-shadow: 0 4px 20px rgba(45, 53, 97, 0.3);
+  overflow: hidden;
+  isolation: isolate;
+  contain: layout style;
+}
+
+/* Hover effect with orange gradient */
+.scroll-btn:hover {
+  background: linear-gradient(135deg, var(--accent-orange) 0%, var(--accent-yellow) 100%);
+  border-color: var(--accent-yellow);
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 8px 30px rgba(218, 165, 32, 0.4);
+}
+
+/* Focus state for accessibility */
+.scroll-btn:focus {
+  outline: 3px solid var(--white);
+  outline-offset: 3px;
+}
+
+/* Active state */
+.scroll-btn:active {
+  transform: translateY(-1px) scale(1.02);
+}
+
+/* Icon styling */
+.scroll-btn i {
+  font-size: 1.4rem;
+  transition: transform 0.3s ease;
+}
+
+.scroll-btn:hover i {
+  transform: translateY(-2px);
+}
+
+/* Pulse animation when first appearing */
+.scroll-to-top.show .scroll-btn {
+  animation: scrollButtonPulse 2s ease-in-out;
+}
+
+@keyframes scrollButtonPulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+/* Glassmorphism effect */
+.scroll-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
+  border-radius: inherit;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Icon z-index */
+.scroll-btn i {
+  position: relative;
+  z-index: 2;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .scroll-to-top {
+    bottom: 25px;
+    right: 25px;
+  }
+  
+  .scroll-btn {
+    width: 50px;
+    height: 50px;
+    padding: var(--spacing-sm);
+  }
+  
+  .scroll-btn i {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .scroll-to-top {
+    bottom: 20px;
+    right: 20px;
+  }
+  
+  .scroll-btn {
+    width: 48px;
+    height: 48px;
+    padding: var(--spacing-sm);
+  }
+  
+  .scroll-btn i {
+    font-size: 1.1rem;
+  }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .scroll-btn {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  }
+  
+  .scroll-btn:hover {
+    box-shadow: 0 8px 30px rgba(218, 165, 32, 0.6);
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .scroll-to-top {
+    transition: opacity 0.3s ease;
+  }
+  
+  .scroll-btn {
+    transition: background-color 0.3s ease;
+  }
+  
+  .scroll-btn:hover {
+    transform: none;
+  }
+  
+  .scroll-to-top.show .scroll-btn {
+    animation: none;
+  }
+}
+
+/* High contrast mode */
+@media (prefers-contrast: high) {
+  .scroll-btn {
+    border-width: 3px;
+    border-color: var(--white);
+  }
+  
+  .scroll-btn:focus {
+    outline-width: 4px;
+  }
+}
+
+/* Position adjustment when notification bell is visible */
+.notification-toggle.show ~ .scroll-to-top {
+  bottom: 100px; /* Move up when notification bell is shown */
+}
+
+@media (max-width: 768px) {
+  .notification-toggle.show ~ .scroll-to-top {
+    bottom: 90px;
+  }
+}
+
+@media (max-width: 480px) {
+  .notification-toggle.show ~ .scroll-to-top {
+    bottom: 80px;
+  }
+}

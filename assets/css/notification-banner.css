@@ -5,7 +5,7 @@
   color: var(--white);
   padding: var(--spacing-sm) 0;
   position: relative;
-  z-index: 1000;
+  z-index: 0;
   box-shadow: var(--shadow-sm);
   border-bottom: 2px solid var(--accent-orange);
   overflow: hidden;
@@ -60,15 +60,15 @@
 .notification-item.active {
   opacity: 1;
   transform: translateY(0);
-  animation: scrollText 20s linear infinite; /* Only active item has desktop animation */
+  animation: scrollText 25s linear infinite; /* Consistent speed for all screens */
 }
 
 /* Pause animation on hover - for all screen sizes */
-.notification-banner:hover .notification-item {
+.notification-content:hover .notification-item {
   animation-play-state: paused !important;
 }
 
-.notification-banner:hover .notification-item.active {
+.notification-content:hover .notification-item.active {
   animation-play-state: paused !important;
 }
 
@@ -247,7 +247,7 @@
   }
   
   .notification-item.active {
-    animation: mobileScrollText 25s linear infinite; /* Only active item has mobile animation */
+    animation: mobileScrollText 25s linear infinite; /* Consistent speed for all screens */
   }
   
   .notification-close {
@@ -267,7 +267,7 @@
   }
   
   .notification-item.active {
-    animation: mobileScrollText 30s linear infinite; /* Even slower for very small screens */
+    animation: mobileScrollText 25s linear infinite; /* Consistent speed for all screens */
   }
   
   .notification-text {

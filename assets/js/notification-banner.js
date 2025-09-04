@@ -103,10 +103,7 @@ class NotificationBanner {
       }
     });
     
-    // Window resize (update rotation speed for responsive)
-    window.addEventListener('resize', () => {
-      this.updateRotationSpeed();
-    });
+    // Window resize listener removed - speed is now consistent across all screen sizes
   }
   
   startRotation() {
@@ -226,14 +223,8 @@ class NotificationBanner {
   }
   
   getRotationSpeed() {
-    // Match CSS animation speeds
-    if (window.innerWidth <= 480) {
-      return 30000; // 30s for very small screens
-    } else if (window.innerWidth <= 768) {
-      return 25000; // 25s for mobile
-    } else {
-      return 20000; // 20s for desktop
-    }
+    // Consistent speed across all screen sizes
+    return 25000; // 25s for all screens
   }
   
   updateRotationSpeed() {
