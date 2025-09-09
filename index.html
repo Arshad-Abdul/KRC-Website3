@@ -74,33 +74,43 @@
             <li>
               <span>Home</span>
             </li>
-             <li>
-              <span>
-                <i class="fa-solid fa-book-open"></i> <a href="https://catalogue.krc.iith.ac.in">Catalogue</a>
-              </span>
+            <li class="dropdown">
+              <span>KRC Services <i class="fa-solid fa-caret-down"></i></span>
+              <ul class="dropdown-menu">
+                <li><a href="#"><i class="ri-article-line"></i>&ThickSpace;Article Request</a></li>
+                <li><a href="#"><i class="ri-pen-nib-fill"></i>&ThickSpace;Grammarly Access Request</a></li>
+                <li><a href="#"><i class="ri-file-copy-line"></i>&ThickSpace;Plagiarism Request</a></li>
+                <li><a href="#"><i class="ri-computer-line"></i>&ThickSpace;KRC Computer Lab User Instructions</a></li>
+                <li><a href="#"><i class="ri-book-read-fill"></i>&ThickSpace;Library User Instructions</a></li>
+                <li><a href="#"><i class="ri-file-list-line"></i>&ThickSpace;Library Rules</a></li>
+                <li><a href="#"><i class="ri-file-text-line"></i>&ThickSpace;Library Policy</a></li>
+                <li><a href="#"><i class="ri-book-open-line"></i>&ThickSpace;GDR Instructions</a></li>
+                <li><a href="#"><i class="ri-refresh-line"></i>&ThickSpace;Circulation Rules</a></li>
+                <li><a href="#"><i class="ri-time-line"></i>&ThickSpace;KRC Timings</a></li>
+              </ul>
             </li>
             
             <li class="dropdown">
               <span>Discover KRC <i class="fa-solid fa-caret-down"></i></span>
               <ul class="dropdown-menu">
-                <li><a href="#"><i class="ri-stack-fill"></i>&ThickSpace;Journal Resources</a></li>
+                <li><a href="#"><i class="ri-newspaper-line"></i>&ThickSpace;Journal Resources</a></li>
                 <li><a href="#"><i class="ri-book-read-fill"></i>&ThickSpace;eBooks</a></li>
                 <li><a href="#"><i class="ri-database-line"></i>&ThickSpace;Databases</a></li>
-                <li><a href="#"><i class="ri-pen-nib-fill"></i></i>&ThickSpace;Writing Support Tool</a></li>
+                <li><a href="#"><i class="ri-edit-line"></i>&ThickSpace;Writing Support Tool</a></li>
                 <li><a href="#"><i class="ri-newspaper-line"></i>&ThickSpace;Newspaper/Magazine</a></li>
                 <li><a href="#"><i class="ri-tools-line"></i>&ThickSpace;Reference Management Tools</a></li>
-                <li><a href="#"><i class="ri-article-line"></i>&ThickSpace;A-Z Resources</a></li>
-                <li><a href="#"><i class="ri-article-line"></i>&ThickSpace;Library Services</a></li>
-                <li><a href="#"><i class="ri-article-line"></i>&ThickSpace;FAQs</a></li>
+                <li><a href="#"><i class="ri-list-check"></i>&ThickSpace;A-Z Resources</a></li>
+                <li><a href="#"><i class="ri-service-line"></i>&ThickSpace;Library Services</a></li>
+                <li><a href="#"><i class="ri-question-line"></i>&ThickSpace;FAQs</a></li>
               </ul>
             </li>
             <li class="dropdown">
               <span>Facilities <i class="fa-solid fa-caret-down"></i></span>
                <ul class="dropdown-menu">
-                <li><a href="#"><i class="ri-stack-fill"></i>&ThickSpace;Book GDR</a></li>
-                <li><a href="#"><i class="ri-book-read-fill"></i>&ThickSpace;Book Virtual Class Room</a></li>
-                <li><a href="#"><i class="ri-database-line"></i>&ThickSpace;Book Seminar Room</a></li>
-                <li><a href="#"><i class="ri-pen-nib-fill"></i></i>&ThickSpace;Video Conference Room</a></li>                
+                <li><a href="#"><i class="ri-book-read-fill"></i>&ThickSpace;Book GDR</a></li>
+                <li><a href="#"><i class="ri-video-line"></i>&ThickSpace;Book Virtual Class Room</a></li>
+                <li><a href="#"><i class="ri-presentation-line"></i>&ThickSpace;Book Seminar Room</a></li>
+                <li><a href="#"><i class="ri-camera-line"></i>&ThickSpace;Video Conference Room</a></li>                
               </ul>
             </li>
 
@@ -110,6 +120,7 @@
                 <li><a href="krc-staff.html"><i class="ri-stack-fill"></i>&ThickSpace;KRC Team</a></li>
                 <li><a href="#"><i class="ri-book-read-fill"></i>&ThickSpace;Library Committee</a></li>
                 <li><a href="#"><i class="ri-database-line"></i>&ThickSpace;KRC Alumni</a></li>
+                <li><a href="#"><i class="ri-time-line"></i>&ThickSpace;KRC Timeline</a></li>
                
               </ul>
             </li>
@@ -128,11 +139,24 @@
               <span>Home</span>
             </a>
           </li>
-          <li class="mobile-menu-item">
-            <a href="https://catalogue.krc.iith.ac.in" class="mobile-menu-link">
-              <i class="fa-solid fa-book-open"></i>
-              <span>Catalogue</span>
+          <li class="mobile-menu-item dropdown">
+            <a href="#" class="mobile-menu-link" data-toggle="krc-services">
+              <i class="ri-service-line"></i>
+              <span>KRC Services</span>
+              <i class="fa-solid fa-caret-down"></i>
             </a>
+            <ul class="mobile-submenu" id="krc-services">
+              <li><a href="#"><i class="ri-article-line"></i>Article Request</a></li>
+              <li><a href="#"><i class="ri-pen-nib-fill"></i>Grammarly Access Request</a></li>
+              <li><a href="#"><i class="ri-file-copy-line"></i>Plagiarism Request</a></li>
+              <li><a href="#"><i class="ri-computer-line"></i>KRC Computer Lab User Instructions</a></li>
+              <li><a href="#"><i class="ri-book-read-fill"></i>Library User Instructions</a></li>
+              <li><a href="#"><i class="ri-file-list-line"></i>Library Rules</a></li>
+              <li><a href="#"><i class="ri-file-text-line"></i>Library Policy</a></li>
+              <li><a href="#"><i class="ri-book-open-line"></i>GDR Instructions</a></li>
+              <li><a href="#"><i class="ri-refresh-line"></i>Circulation Rules</a></li>
+              <li><a href="#"><i class="ri-time-line"></i>KRC Timings</a></li>
+            </ul>
           </li>
           <li class="mobile-menu-item dropdown">
             <a href="#" class="mobile-menu-link" data-toggle="discover">
@@ -141,15 +165,15 @@
               <i class="fa-solid fa-caret-down"></i>
             </a>
             <ul class="mobile-submenu" id="discover">
-              <li><a href="#"><i class="ri-stack-fill"></i>Journal Resources</a></li>
+              <li><a href="#"><i class="ri-newspaper-line"></i>Journal Resources</a></li>
               <li><a href="#"><i class="ri-book-read-fill"></i>eBooks</a></li>
               <li><a href="#"><i class="ri-database-line"></i>Databases</a></li>
-              <li><a href="#"><i class="ri-pen-nib-fill"></i>Writing Support Tool</a></li>
+              <li><a href="#"><i class="ri-edit-line"></i>Writing Support Tool</a></li>
               <li><a href="#"><i class="ri-newspaper-line"></i>Newspaper/Magazine</a></li>
               <li><a href="#"><i class="ri-tools-line"></i>Reference Management Tools</a></li>
-              <li><a href="#"><i class="ri-article-line"></i>A-Z Resources</a></li>
-              <li><a href="#"><i class="ri-article-line"></i>Library Services</a></li>
-              <li><a href="#"><i class="ri-article-line"></i>FAQs</a></li>
+              <li><a href="#"><i class="ri-list-check"></i>A-Z Resources</a></li>
+              <li><a href="#"><i class="ri-service-line"></i>Library Services</a></li>
+              <li><a href="#"><i class="ri-question-line"></i>FAQs</a></li>
             </ul>
           </li>
           <li class="mobile-menu-item dropdown">
@@ -159,10 +183,10 @@
               <i class="fa-solid fa-caret-down"></i>
             </a>
             <ul class="mobile-submenu" id="facilities">
-              <li><a href="#"><i class="ri-stack-fill"></i>Book GDR</a></li>
-              <li><a href="#"><i class="ri-book-read-fill"></i>Book Virtual Class Room</a></li>
-              <li><a href="#"><i class="ri-database-line"></i>Book Seminar Room</a></li>
-              <li><a href="#"><i class="ri-pen-nib-fill"></i>Video Conference Room</a></li>
+              <li><a href="#"><i class="ri-book-read-fill"></i>Book GDR</a></li>
+              <li><a href="#"><i class="ri-video-line"></i>Book Virtual Class Room</a></li>
+              <li><a href="#"><i class="ri-presentation-line"></i>Book Seminar Room</a></li>
+              <li><a href="#"><i class="ri-camera-line"></i>Video Conference Room</a></li>
             </ul>
           </li>
           <li class="mobile-menu-item dropdown">
@@ -175,11 +199,12 @@
               <li><a href="krc-staff.html"><i class="ri-stack-fill"></i>KRC Team</a></li>
               <li><a href="#"><i class="ri-book-read-fill"></i>Library Committee</a></li>
               <li><a href="#"><i class="ri-database-line"></i>KRC Alumni</a></li>
+              <li><a href="#"><i class="ri-time-line"></i>KRC Timeline</a></li>
             </ul>
           </li>
         </ul>
               </div>
-              </div>
+    </div>
   </header>
 
   <!-- Notification Banner -->
@@ -489,7 +514,6 @@
       </button>
     </div>
   </section>
-  <!-- Glance -->
 
   <!-- Quick Links Section Header -->
   <section class="quick-links-header-section">

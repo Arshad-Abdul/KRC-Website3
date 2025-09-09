@@ -1,0 +1,889 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KRC Team - IIT Hyderabad Knowledge Resource Centre</title>
+  <meta name="description" content="Meet the dedicated team of the Knowledge Resource Centre at IIT Hyderabad. Our experienced librarians and staff are here to support your academic and research needs.">
+  
+  <!-- CSS Files -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/header.css">
+  <link rel="stylesheet" href="assets/css/footer.css">
+  <link rel="stylesheet" href="assets/css/accessibility-toolkit.css">
+  
+  <!-- Icon Libraries -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" />
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+  
+  <!-- Custom Team Page Styles -->
+  <style>
+    /* Team Page Specific Styles */
+    .team-hero {
+      background: var(--gradient-primary);
+      padding: var(--spacing-3xl) 0 var(--spacing-2xl);
+      text-align: center;
+      color: var(--white);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .team-hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="hero-pattern" width="20" height="20" patternUnits="userSpaceOnUse"><path d="M 20 0 L 0 0 0 20" fill="none" stroke="%23ffffff" stroke-width="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23hero-pattern)"/></svg>');
+      opacity: 0.1;
+      z-index: 1;
+    }
+
+    .team-hero-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 var(--spacing-md);
+      position: relative;
+      z-index: 2;
+    }
+
+    .team-hero h1 {
+      font-size: var(--font-size-4xl);
+      font-weight: 700;
+      margin-bottom: var(--spacing-md);
+      color: var(--white);
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    }
+
+    .team-hero p {
+      font-size: var(--font-size-lg);
+      opacity: 0.9;
+      max-width: 600px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    .team-section {
+      padding: var(--spacing-3xl) 0;
+      background: var(--background-light);
+      position: relative;
+    }
+
+    .team-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: radial-gradient(circle at 25% 25%, rgba(27, 161, 161, 0.03) 0%, transparent 50%),
+                  radial-gradient(circle at 75% 75%, rgba(255, 107, 53, 0.03) 0%, transparent 50%);
+      z-index: 1;
+    }
+
+    .team-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 var(--spacing-md);
+      position: relative;
+      z-index: 2;
+    }
+
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: var(--spacing-xl);
+      margin-top: var(--spacing-2xl);
+    }
+
+    .team-card {
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      padding: var(--spacing-xl);
+      box-shadow: var(--shadow-md);
+      transition: all var(--transition-normal);
+      border: 1px solid rgba(45, 53, 97, 0.1);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .team-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: var(--gradient-primary);
+    }
+
+    .team-card:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--shadow-xl);
+      border-color: var(--primary-teal);
+    }
+
+    .team-card-header {
+      display: flex;
+      align-items: center;
+      margin-bottom: var(--spacing-lg);
+    }
+
+    .team-avatar {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background: var(--gradient-primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: var(--spacing-lg);
+      flex-shrink: 0;
+    }
+
+    .team-avatar i {
+      font-size: 2rem;
+      color: var(--white);
+    }
+
+    .team-info h3 {
+      font-size: var(--font-size-xl);
+      font-weight: 600;
+      color: var(--primary-navy);
+      margin-bottom: var(--spacing-xs);
+    }
+
+    .team-info .position {
+      font-size: var(--font-size-sm);
+      color: var(--primary-teal);
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .team-contact {
+      margin-top: var(--spacing-lg);
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      margin-bottom: var(--spacing-sm);
+      font-size: var(--font-size-sm);
+      color: var(--medium-gray);
+    }
+
+    .contact-item i {
+      width: 20px;
+      margin-right: var(--spacing-sm);
+      color: var(--primary-teal);
+    }
+
+    .contact-item a {
+      color: var(--primary-teal);
+      text-decoration: none;
+      transition: color var(--transition-fast);
+    }
+
+    .contact-item a:hover {
+      color: var(--primary-navy);
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: var(--spacing-lg);
+    }
+
+    .section-title h2 {
+      font-size: var(--font-size-3xl);
+      font-weight: 700;
+      color: var(--primary-navy);
+      margin-bottom: var(--spacing-sm);
+    }
+
+    .section-title p {
+      font-size: var(--font-size-lg);
+      color: var(--medium-gray);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    /* Team Tabs Styles */
+    .team-tabs {
+      margin-top: var(--spacing-2xl);
+    }
+
+    .tab-buttons {
+      display: flex;
+      justify-content: center;
+      margin-bottom: var(--spacing-2xl);
+      border-bottom: 2px solid rgba(45, 53, 97, 0.1);
+      flex-wrap: wrap;
+      gap: var(--spacing-sm);
+    }
+
+    .tab-button {
+      background: transparent;
+      border: none;
+      padding: var(--spacing-md) var(--spacing-xl);
+      font-size: var(--font-size-base);
+      font-weight: 500;
+      color: var(--medium-gray);
+      cursor: pointer;
+      transition: all var(--transition-fast);
+      border-bottom: 3px solid transparent;
+      position: relative;
+    }
+
+    .tab-button:hover {
+      color: var(--primary-teal);
+      background: rgba(27, 161, 161, 0.05);
+    }
+
+    .tab-button.active {
+      color: var(--primary-navy);
+      border-bottom-color: var(--primary-teal);
+      background: rgba(27, 161, 161, 0.1);
+    }
+
+    .tab-content {
+      display: none;
+      animation: fadeIn 0.3s ease-in-out;
+    }
+
+    .tab-content.active {
+      display: block;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Empty Tab Styles */
+    .empty-tab {
+      text-align: center;
+      padding: var(--spacing-3xl) var(--spacing-lg);
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-sm);
+      border: 2px dashed rgba(45, 53, 97, 0.2);
+    }
+
+    .empty-tab-icon {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background: var(--gradient-primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto var(--spacing-lg);
+    }
+
+    .empty-tab-icon i {
+      font-size: 2rem;
+      color: var(--white);
+    }
+
+    .empty-tab h3 {
+      font-size: var(--font-size-xl);
+      color: var(--primary-navy);
+      margin-bottom: var(--spacing-sm);
+    }
+
+    .empty-tab p {
+      color: var(--medium-gray);
+      font-size: var(--font-size-base);
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .team-hero h1 {
+        font-size: var(--font-size-3xl);
+      }
+      
+      .team-hero p {
+        font-size: var(--font-size-base);
+      }
+      
+      .team-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-lg);
+      }
+      
+      .team-card {
+        padding: var(--spacing-lg);
+      }
+      
+      .team-card-header {
+        flex-direction: column;
+        text-align: center;
+      }
+      
+      .team-avatar {
+        margin-right: 0;
+        margin-bottom: var(--spacing-md);
+      }
+    }
+
+    @media (max-width: 480px) {
+      .team-hero {
+        padding: var(--spacing-2xl) 0 var(--spacing-xl);
+      }
+      
+      .team-section {
+        padding: var(--spacing-2xl) 0;
+      }
+      
+      .team-card {
+        padding: var(--spacing-md);
+      }
+      
+      .tab-buttons {
+        flex-direction: column;
+        align-items: center;
+      }
+      
+      .tab-button {
+        width: 100%;
+        max-width: 300px;
+        margin-bottom: var(--spacing-xs);
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="header" id="navigation">
+    <div class="nav_upper">
+        <div class="nav_upper_container">
+            <div class="nav_upper_left">
+                <div id="google_translate_element"></div>
+                <div class="nav_links">
+                    <a href="https://iith.ac.in" target="_blank" rel="noopener noreferrer">IITH Website</a>
+                    <a href="https://catalogue.krc.iith.ac.in" target="_blank" rel="noopener noreferrer">OPAC</a>
+                    <a href="https://raiith.krc.iith.ac.in/home" target="_blank" rel="noopener noreferrer">RAIITH</a>
+                    <a href="https://iith.irins.org/" target="_blank" rel="noopener noreferrer">IRINS</a>
+                    <a href="#" target="_blank" rel="noopener noreferrer">IITH-KRC RDV</a>
+                </div>
+            </div>
+        <div id="email_id"><i class="fa-solid fa-envelope"></i> office.library@iith.ac.in</div>
+        </div>
+    </div>
+
+    <nav class="menu">
+      <div class="header_logo">
+        <img src="./assets/img/KRC-IITH-BL-Logo (2).png" alt="KRC Library Logo">
+      </div>
+      
+      <!-- Mobile Menu Toggle Button -->
+      <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle mobile menu">
+        <div class="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </button>
+      
+      <div class="header_menu">
+          <ul id="mobileMenu">
+            <li>
+              <span><a href="index.html">Home</a></span>
+            </li>
+            <li class="dropdown">
+              <span>KRC Services <i class="fa-solid fa-caret-down"></i></span>
+              <ul class="dropdown-menu">
+                <li><a href="#"><i class="ri-article-line"></i>&ThickSpace;Article Request</a></li>
+                <li><a href="#"><i class="ri-pen-nib-fill"></i>&ThickSpace;Grammarly Access Request</a></li>
+                <li><a href="#"><i class="ri-file-copy-line"></i>&ThickSpace;Plagiarism Request</a></li>
+                <li><a href="#"><i class="ri-computer-line"></i>&ThickSpace;KRC Computer Lab User Instructions</a></li>
+                <li><a href="#"><i class="ri-book-read-fill"></i>&ThickSpace;Library User Instructions</a></li>
+                <li><a href="#"><i class="ri-file-list-line"></i>&ThickSpace;Library Rules</a></li>
+                <li><a href="#"><i class="ri-file-text-line"></i>&ThickSpace;Library Policy</a></li>
+                <li><a href="#"><i class="ri-book-open-line"></i>&ThickSpace;GDR Instructions</a></li>
+                <li><a href="#"><i class="ri-refresh-line"></i>&ThickSpace;Circulation Rules</a></li>
+                <li><a href="#"><i class="ri-time-line"></i>&ThickSpace;KRC Timings</a></li>
+              </ul>
+            </li>
+            
+            <li class="dropdown">
+              <span>Discover KRC <i class="fa-solid fa-caret-down"></i></span>
+              <ul class="dropdown-menu">
+                <li><a href="#"><i class="ri-newspaper-line"></i>&ThickSpace;Journal Resources</a></li>
+                <li><a href="#"><i class="ri-book-read-fill"></i>&ThickSpace;eBooks</a></li>
+                <li><a href="#"><i class="ri-database-line"></i>&ThickSpace;Databases</a></li>
+                <li><a href="#"><i class="ri-edit-line"></i>&ThickSpace;Writing Support Tool</a></li>
+                <li><a href="#"><i class="ri-newspaper-line"></i>&ThickSpace;Newspaper/Magazine</a></li>
+                <li><a href="#"><i class="ri-tools-line"></i>&ThickSpace;Reference Management Tools</a></li>
+                <li><a href="#"><i class="ri-list-check"></i>&ThickSpace;A-Z Resources</a></li>
+                <li><a href="#"><i class="ri-service-line"></i>&ThickSpace;Library Services</a></li>
+                <li><a href="#"><i class="ri-question-line"></i>&ThickSpace;FAQs</a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <span>Facilities <i class="fa-solid fa-caret-down"></i></span>
+               <ul class="dropdown-menu">
+                <li><a href="#"><i class="ri-book-read-fill"></i>&ThickSpace;Book GDR</a></li>
+                <li><a href="#"><i class="ri-video-line"></i>&ThickSpace;Book Virtual Class Room</a></li>
+                <li><a href="#"><i class="ri-presentation-line"></i>&ThickSpace;Book Seminar Room</a></li>
+                <li><a href="#"><i class="ri-camera-line"></i>&ThickSpace;Video Conference Room</a></li>                
+              </ul>
+            </li>
+
+            <li class="dropdown">
+              <span>About us <i class="fa-solid fa-caret-down"></i></span>
+               <ul class="dropdown-menu">
+                <li><a href="krc-staff.html"><i class="ri-stack-fill"></i>&ThickSpace;KRC Team</a></li>
+                <li><a href="#"><i class="ri-book-read-fill"></i>&ThickSpace;Library Committee</a></li>
+                <li><a href="#"><i class="ri-database-line"></i>&ThickSpace;KRC Alumni</a></li>
+                <li><a href="#"><i class="ri-time-line"></i>&ThickSpace;KRC Timeline</a></li>
+              </ul>
+            </li>
+          </ul>
+      </div>
+    </nav>
+
+    <!-- Mobile Dropdown Menu -->
+    <div class="mobile-dropdown-menu" id="mobileDropdownMenu" style="display: none;">
+      <div class="mobile-menu-container">
+        <ul class="mobile-menu-list">
+          <li class="mobile-menu-item">
+            <a href="index.html" class="mobile-menu-link">
+              <i class="ri-home-4-line"></i>
+              <span>Home</span>
+            </a>
+          </li>
+          <li class="mobile-menu-item dropdown">
+            <a href="#" class="mobile-menu-link" data-toggle="krc-services">
+              <i class="ri-service-line"></i>
+              <span>KRC Services</span>
+              <i class="fa-solid fa-caret-down"></i>
+            </a>
+            <ul class="mobile-submenu" id="krc-services">
+              <li><a href="#"><i class="ri-article-line"></i>Article Request</a></li>
+              <li><a href="#"><i class="ri-pen-nib-fill"></i>Grammarly Access Request</a></li>
+              <li><a href="#"><i class="ri-file-copy-line"></i>Plagiarism Request</a></li>
+              <li><a href="#"><i class="ri-computer-line"></i>KRC Computer Lab User Instructions</a></li>
+              <li><a href="#"><i class="ri-book-read-fill"></i>Library User Instructions</a></li>
+              <li><a href="#"><i class="ri-file-list-line"></i>Library Rules</a></li>
+              <li><a href="#"><i class="ri-file-text-line"></i>Library Policy</a></li>
+              <li><a href="#"><i class="ri-book-open-line"></i>GDR Instructions</a></li>
+              <li><a href="#"><i class="ri-refresh-line"></i>Circulation Rules</a></li>
+              <li><a href="#"><i class="ri-time-line"></i>KRC Timings</a></li>
+            </ul>
+          </li>
+          <li class="mobile-menu-item dropdown">
+            <a href="#" class="mobile-menu-link" data-toggle="discover">
+              <i class="ri-search-line"></i>
+              <span>Discover KRC</span>
+              <i class="fa-solid fa-caret-down"></i>
+            </a>
+            <ul class="mobile-submenu" id="discover">
+              <li><a href="#"><i class="ri-newspaper-line"></i>Journal Resources</a></li>
+              <li><a href="#"><i class="ri-book-read-fill"></i>eBooks</a></li>
+              <li><a href="#"><i class="ri-database-line"></i>Databases</a></li>
+              <li><a href="#"><i class="ri-edit-line"></i>Writing Support Tool</a></li>
+              <li><a href="#"><i class="ri-newspaper-line"></i>Newspaper/Magazine</a></li>
+              <li><a href="#"><i class="ri-tools-line"></i>Reference Management Tools</a></li>
+              <li><a href="#"><i class="ri-list-check"></i>A-Z Resources</a></li>
+              <li><a href="#"><i class="ri-service-line"></i>Library Services</a></li>
+              <li><a href="#"><i class="ri-question-line"></i>FAQs</a></li>
+            </ul>
+          </li>
+          <li class="mobile-menu-item dropdown">
+            <a href="#" class="mobile-menu-link" data-toggle="facilities">
+              <i class="ri-building-line"></i>
+              <span>Facilities</span>
+              <i class="fa-solid fa-caret-down"></i>
+            </a>
+            <ul class="mobile-submenu" id="facilities">
+              <li><a href="#"><i class="ri-book-read-fill"></i>Book GDR</a></li>
+              <li><a href="#"><i class="ri-video-line"></i>Book Virtual Class Room</a></li>
+              <li><a href="#"><i class="ri-presentation-line"></i>Book Seminar Room</a></li>
+              <li><a href="#"><i class="ri-camera-line"></i>Video Conference Room</a></li>
+            </ul>
+          </li>
+          <li class="mobile-menu-item dropdown">
+            <a href="#" class="mobile-menu-link" data-toggle="about">
+              <i class="ri-information-line"></i>
+              <span>About us</span>
+              <i class="fa-solid fa-caret-down"></i>
+            </a>
+            <ul class="mobile-submenu" id="about">
+              <li><a href="krc-staff.html"><i class="ri-stack-fill"></i>KRC Team</a></li>
+              <li><a href="#"><i class="ri-book-read-fill"></i>Library Committee</a></li>
+              <li><a href="#"><i class="ri-database-line"></i>KRC Alumni</a></li>
+              <li><a href="#"><i class="ri-time-line"></i>KRC Timeline</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </header>
+
+  <!-- Team Hero Section -->
+  <section class="team-hero">
+    <div class="team-hero-content">
+      <h1>Meet Our KRC Team</h1>
+      <p>Our dedicated team of experienced librarians and information professionals is committed to supporting your academic and research journey at IIT Hyderabad.</p>
+    </div>
+  </section>
+
+  <!-- Team Section -->
+  <section class="team-section">
+    <div class="team-container">
+      <div class="section-title">
+        <h2>Knowledge Resource Centre Staff</h2>
+        <p>Get to know the professionals who make the KRC a world-class academic resource center</p>
+      </div>
+      
+      <!-- Team Tabs -->
+      <div class="team-tabs">
+        <div class="tab-buttons">
+          <button class="tab-button active" data-tab="krc-officers">KRC Officers</button>
+          <button class="tab-button" data-tab="library-assistant">Library Assistant</button>
+          <button class="tab-button" data-tab="library-trainee">Library Trainee</button>
+          <button class="tab-button" data-tab="library-attendant">Library Attendant</button>
+        </div>
+        
+        <!-- KRC Officers Tab -->
+        <div class="tab-content active" id="krc-officers">
+      
+      <div class="team-grid">
+        <!-- Dr. Bhojaraju Gunjal -->
+        <div class="team-card">
+          <div class="team-card-header">
+            <div class="team-avatar">
+              <i class="ri-user-star-line"></i>
+            </div>
+            <div class="team-info">
+              <h3>Dr. Bhojaraju Gunjal</h3>
+              <div class="position">Chief Library Officer</div>
+            </div>
+          </div>
+          <div class="team-contact">
+            <div class="contact-item">
+              <i class="ri-mail-line"></i>
+              <a href="mailto:bhojaraju@iith.ac.in">bhojaraju@iith.ac.in</a>
+            </div>
+            <div class="contact-item">
+              <i class="ri-phone-line"></i>
+              <span>2301 6085</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Dr. C Mallikarjuna -->
+        <div class="team-card">
+          <div class="team-card-header">
+            <div class="team-avatar">
+              <i class="ri-user-star-line"></i>
+            </div>
+            <div class="team-info">
+              <h3>Dr. C Mallikarjuna</h3>
+              <div class="position">Deputy Librarian</div>
+            </div>
+          </div>
+          <div class="team-contact">
+            <div class="contact-item">
+              <i class="ri-mail-line"></i>
+              <a href="mailto:mallikarjuna@iith.ac.in">mallikarjuna@iith.ac.in</a>
+            </div>
+            <div class="contact-item">
+              <i class="ri-phone-line"></i>
+              <span>2301 6086</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Kimidi Siva Shankar -->
+        <div class="team-card">
+          <div class="team-card-header">
+            <div class="team-avatar">
+              <i class="ri-user-line"></i>
+            </div>
+            <div class="team-info">
+              <h3>Kimidi Siva Shankar</h3>
+              <div class="position">Assistant Librarian</div>
+            </div>
+          </div>
+          <div class="team-contact">
+            <div class="contact-item">
+              <i class="ri-mail-line"></i>
+              <a href="mailto:sivashankar@iith.ac.in">sivashankar@iith.ac.in</a>
+            </div>
+            <div class="contact-item">
+              <i class="ri-phone-line"></i>
+              <span>2301 6087</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Gajanand Kumar Kaushik -->
+        <div class="team-card">
+          <div class="team-card-header">
+            <div class="team-avatar">
+              <i class="ri-user-line"></i>
+            </div>
+            <div class="team-info">
+              <h3>Gajanand Kumar Kaushik</h3>
+              <div class="position">Library Information Assistant</div>
+            </div>
+          </div>
+          <div class="team-contact">
+            <div class="contact-item">
+              <i class="ri-information-line"></i>
+              <span>Contact information available upon request</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Haseena V K K M -->
+        <div class="team-card">
+          <div class="team-card-header">
+            <div class="team-avatar">
+              <i class="ri-user-line"></i>
+            </div>
+            <div class="team-info">
+              <h3>Haseena V K K M</h3>
+              <div class="position">Library Information Assistant</div>
+            </div>
+          </div>
+          <div class="team-contact">
+            <div class="contact-item">
+              <i class="ri-mail-line"></i>
+              <a href="mailto:haseena@iith.ac.in">haseena@iith.ac.in</a>
+            </div>
+            <div class="contact-item">
+              <i class="ri-phone-line"></i>
+              <span>2301 6750</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Jayanta Kumar Sahu -->
+        <div class="team-card">
+          <div class="team-card-header">
+            <div class="team-avatar">
+              <i class="ri-user-line"></i>
+            </div>
+            <div class="team-info">
+              <h3>Jayanta Kumar Sahu</h3>
+              <div class="position">Library Information Assistant</div>
+            </div>
+          </div>
+          <div class="team-contact">
+            <div class="contact-item">
+              <i class="ri-mail-line"></i>
+              <a href="mailto:jayanta@iith.ac.in">jayanta@iith.ac.in</a>
+            </div>
+            <div class="contact-item">
+              <i class="ri-phone-line"></i>
+              <span>2301 6750</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sajan C S -->
+        <div class="team-card">
+          <div class="team-card-header">
+            <div class="team-avatar">
+              <i class="ri-user-line"></i>
+            </div>
+            <div class="team-info">
+              <h3>Sajan C S</h3>
+              <div class="position">Junior Library Information Assistant</div>
+            </div>
+          </div>
+          <div class="team-contact">
+            <div class="contact-item">
+              <i class="ri-information-line"></i>
+              <span>Contact information available upon request</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Suchita Sahoo -->
+        <div class="team-card">
+          <div class="team-card-header">
+            <div class="team-avatar">
+              <i class="ri-user-line"></i>
+            </div>
+            <div class="team-info">
+              <h3>Suchita Sahoo</h3>
+              <div class="position">Junior Library Information Assistant</div>
+            </div>
+          </div>
+          <div class="team-contact">
+            <div class="contact-item">
+              <i class="ri-information-line"></i>
+              <span>Contact information available upon request</span>
+            </div>
+          </div>
+        </div>
+        </div>
+        
+        <!-- Library Assistant Tab -->
+        <div class="tab-content" id="library-assistant">
+          <div class="empty-tab">
+            <div class="empty-tab-icon">
+              <i class="ri-user-line"></i>
+            </div>
+            <h3>Library Assistant</h3>
+            <p>Information about Library Assistant staff will be added here.</p>
+          </div>
+        </div>
+        
+        <!-- Library Trainee Tab -->
+        <div class="tab-content" id="library-trainee">
+          <div class="empty-tab">
+            <div class="empty-tab-icon">
+              <i class="ri-graduation-cap-line"></i>
+            </div>
+            <h3>Library Trainee</h3>
+            <p>Information about Library Trainee staff will be added here.</p>
+          </div>
+        </div>
+        
+        <!-- Library Attendant Tab -->
+        <div class="tab-content" id="library-attendant">
+          <div class="empty-tab">
+            <div class="empty-tab-icon">
+              <i class="ri-user-settings-line"></i>
+            </div>
+            <h3>Library Attendant</h3>
+            <p>Information about Library Attendant staff will be added here.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer Section -->
+  <footer class="footer" id="footer">
+    <div class="footer-container">
+      <!-- Contact Us Section -->
+      <div class="footer-section">
+        <h3 class="footer-title">Contact Us</h3>
+        <div class="contact-info">
+          <h4>IITH Knowledge Resource Centre (KRC)</h4>
+          <p>Indian Institute of Technology Hyderabad</p>
+          <p>Telangana - 502284 | India</p>
+          <p><i class="fas fa-phone"></i> 040-23016750</p>
+          <p><a href="mailto:office.library@iith.ac.in">
+            <i class="fas fa-envelope"></i> office.library@iith.ac.in
+          </a></p>
+          <p><i class="far fa-clock"></i> Available: 9:00 AM to 01:50 AM</p>
+          <p><a href="mailto:krc.facilities@iith.ac.in">
+            <i class="fas fa-envelope"></i> KRC Facilities: krc.facilities@iith.ac.in
+          </a></p>
+        </div>
+      </div>
+
+      <!-- Social Media & Video Section -->
+      <div class="footer-section">
+        <h3 class="footer-title">Connect With Us</h3>
+        
+        <!-- Featured Video -->
+        <div class="footer-video">
+          <div class="video-placeholder">
+            <i class="fas fa-play-circle"></i>
+            <p>Library Virtual Tour</p>
+          </div>
+        </div>
+        
+        <!-- Social Media Links -->
+        <div class="social-links">
+          <a href="#" class="social-link" aria-label="Facebook">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+          <a href="#" class="social-link" aria-label="Twitter">
+            <i class="fab fa-twitter"></i>
+          </a>
+          <a href="#" class="social-link" aria-label="LinkedIn">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+          <a href="#" class="social-link" aria-label="YouTube">
+            <i class="fab fa-youtube"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Quick Links Section -->
+      <div class="footer-section">
+        <h3 class="footer-title">Quick Links</h3>
+        <ul class="footer-links">
+          <li><a href="https://catalogue.krc.iith.ac.in" target="_blank">Library Catalog (OPAC)</a></li>
+          <li><a href="https://raiith.krc.iith.ac.in/home" target="_blank">RAIITH Repository</a></li>
+          <li><a href="https://iith.irins.org/" target="_blank">IRINS Profile</a></li>
+          <li><a href="#" target="_blank">Digital Library</a></li>
+          <li><a href="#" target="_blank">Research Support</a></li>
+          <li><a href="#" target="_blank">Training Programs</a></li>
+        </ul>
+      </div>
+
+      <!-- Services Section -->
+      <div class="footer-section">
+        <h3 class="footer-title">Our Services</h3>
+        <ul class="footer-links">
+          <li><a href="#">Reference Services</a></li>
+          <li><a href="#">Document Delivery</a></li>
+          <li><a href="#">Interlibrary Loan</a></li>
+          <li><a href="#">Research Consultation</a></li>
+          <li><a href="#">Information Literacy</a></li>
+          <li><a href="#">Technical Support</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Footer Bottom -->
+    <div class="footer-bottom">
+      <div class="footer-bottom-container">
+        <div class="footer-bottom-content">
+          <p>&copy; 2024 IIT Hyderabad Knowledge Resource Centre. All rights reserved.</p>
+          <div class="footer-bottom-links">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+            <a href="#">Accessibility</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JavaScript Files -->
+  <script src="assets/js/header.js"></script>
+  <script src="assets/js/accessibility-toolkit.js"></script>
+  
+  <!-- Team Tabs JavaScript -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const tabButtons = document.querySelectorAll('.tab-button');
+      const tabContents = document.querySelectorAll('.tab-content');
+      
+      tabButtons.forEach(button => {
+        button.addEventListener('click', function() {
+          const targetTab = this.getAttribute('data-tab');
+          
+          // Remove active class from all buttons and contents
+          tabButtons.forEach(btn => btn.classList.remove('active'));
+          tabContents.forEach(content => content.classList.remove('active'));
+          
+          // Add active class to clicked button and corresponding content
+          this.classList.add('active');
+          document.getElementById(targetTab).classList.add('active');
+        });
+      });
+    });
+  </script>
+  
+  <!-- Google Translate -->
+  <script type="text/javascript">
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+    }
+  </script>
+  <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+</body>
+</html>
